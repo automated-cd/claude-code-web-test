@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Prompt Engineer's Toolkit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 The Prompt Engineer's Toolkit</h1>
+            <p class="subtitle">Master the art of crafting effective prompts by combining the right techniques</p>
+        </header>
+
+        <div class="game-info">
+            <div class="score-panel">
+                <div class="score-item">
+                    <span class="label">Level:</span>
+                    <span id="current-level" class="value">1</span>
+                    <span class="label">/ <span id="total-levels">5</span></span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Score:</span>
+                    <span id="score" class="value">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="game-container">
+            <div class="prompt-section">
+                <h2>Base Prompt</h2>
+                <div id="base-prompt" class="prompt-box"></div>
+            </div>
+
+            <div class="target-section">
+                <h2>Target Prompt Structure</h2>
+                <div id="target-text" class="target-box"></div>
+                <p class="hint">💡 Select the cards that would transform the base prompt into this target structure</p>
+            </div>
+
+            <div class="cards-section">
+                <h2>Available Cards</h2>
+                <p class="instruction">Click cards to select/deselect them. Watch out for traps!</p>
+                <div id="cards-container" class="cards-grid"></div>
+            </div>
+
+            <div class="selected-section">
+                <h2>Your Selected Cards (<span id="selected-count">0</span>)</h2>
+                <div id="selected-cards" class="selected-cards-container"></div>
+            </div>
+
+            <div class="actions">
+                <button id="submit-btn" class="btn btn-primary">Submit Answer</button>
+                <button id="hint-btn" class="btn btn-secondary">Show Hint</button>
+            </div>
+
+            <div id="feedback" class="feedback hidden"></div>
+            <div id="explanation" class="explanation hidden"></div>
+
+            <div class="navigation hidden" id="navigation">
+                <button id="next-btn" class="btn btn-primary">Next Level →</button>
+            </div>
+        </div>
+
+        <div id="game-complete" class="game-complete hidden">
+            <h2>🎉 Congratulations!</h2>
+            <p>You've completed all levels!</p>
+            <div class="final-score">
+                <h3>Final Score: <span id="final-score">0</span></h3>
+            </div>
+            <div class="techniques-learned">
+                <h3>Techniques Mastered:</h3>
+                <ul id="techniques-list"></ul>
+            </div>
+            <button id="restart-btn" class="btn btn-primary">Play Again</button>
+        </div>
+
+        <footer>
+            <div class="technique-legend">
+                <h3>Prompting Techniques</h3>
+                <div class="legend-grid">
+                    <span class="legend-item"><span class="badge role">Role</span> Define AI's expertise</span>
+                    <span class="legend-item"><span class="badge constraint">Constraint</span> Limit scope/length</span>
+                    <span class="legend-item"><span class="badge format">Format</span> Structure output</span>
+                    <span class="legend-item"><span class="badge style">Style</span> Set tone</span>
+                    <span class="legend-item"><span class="badge audience">Audience</span> Tailor complexity</span>
+                    <span class="legend-item"><span class="badge exemplar">Exemplar</span> Provide examples</span>
+                    <span class="legend-item"><span class="badge step-by-step">Step-by-Step</span> Break down reasoning</span>
+                    <span class="legend-item"><span class="badge scope">Scope</span> Define boundaries</span>
+                    <span class="legend-item"><span class="badge analogy">Analogy</span> Compare concepts</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

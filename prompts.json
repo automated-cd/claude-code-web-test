@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "basePrompt": "Write a summary of the water cycle.",
+    "targetText": "**Role:** Expert Science Educator. **Task:** Provide a clear, three-step summary of the water cycle for middle school students. **Constraint:** Use under 150 words. **Format:** Use a numbered list with bolded key terms (evaporation, condensation, precipitation). **Style:** Engaging and enthusiastic.",
+    "cards": [
+      { "text": "Act as an expert science educator", "technique": "Role", "isTrap": false },
+      { "text": "Include the chemical formula H₂O", "technique": "Constraint", "isTrap": true },
+      { "text": "Use a numbered list with bolded key terms", "technique": "Format", "isTrap": false },
+      { "text": "Make it engaging and enthusiastic", "technique": "Style", "isTrap": false },
+      { "text": "Compare it to a popular movie plot", "technique": "Analogy", "isTrap": true },
+      { "text": "Ensure it's under 150 words", "technique": "Constraint", "isTrap": false },
+      { "text": "List every known type of cloud", "technique": "Scope", "isTrap": true }
+    ],
+    "solution": [0, 2, 3, 5],
+    "explanation": "The target uses **Role** to set expertise, **Format** for clarity, **Style** for tone, and a **word-count Constraint**. Traps include irrelevant detail (H₂O), forced **Analogy**, and **Scope** creep (listing clouds)."
+  },
+  {
+    "id": 2,
+    "basePrompt": "Explain how to make a budget.",
+    "targetText": "**Role:** Personal finance advisor. **Task:** Explain the 50/30/20 budgeting rule to a college student. **Audience:** Complete beginner with no finance knowledge. **Format:** Three paragraphs with clear examples. **Constraint:** Avoid technical jargon.",
+    "cards": [
+      { "text": "Act as a personal finance advisor", "technique": "Role", "isTrap": false },
+      { "text": "Target complete beginners with no finance knowledge", "technique": "Audience", "isTrap": false },
+      { "text": "Use complex economic terminology", "technique": "Style", "isTrap": true },
+      { "text": "Format as three paragraphs with examples", "technique": "Format", "isTrap": false },
+      { "text": "Include historical stock market data", "technique": "Scope", "isTrap": true },
+      { "text": "Avoid technical jargon", "technique": "Constraint", "isTrap": false },
+      { "text": "Write in Old English", "technique": "Style", "isTrap": true }
+    ],
+    "solution": [0, 1, 3, 5],
+    "explanation": "This prompt needs **Role** (finance advisor), **Audience** (beginners), **Format** (paragraphs), and **Constraint** (no jargon). Traps include mismatched **Style** (complex terms, Old English) and irrelevant **Scope** (stock data)."
+  },
+  {
+    "id": 3,
+    "basePrompt": "Describe a database query.",
+    "targetText": "**Role:** Senior database architect. **Task:** Write a SQL query to find all users who registered in the last 30 days and made at least one purchase. **Format:** Provide commented SQL code. **Step-by-Step:** Explain your reasoning for each JOIN and WHERE clause.",
+    "cards": [
+      { "text": "Act as a senior database architect", "technique": "Role", "isTrap": false },
+      { "text": "Provide commented SQL code", "technique": "Format", "isTrap": false },
+      { "text": "Explain your reasoning step by step", "technique": "Step-by-Step", "isTrap": false },
+      { "text": "Use only NoSQL terminology", "technique": "Constraint", "isTrap": true },
+      { "text": "Write it as a poem", "technique": "Format", "isTrap": true },
+      { "text": "Include database security best practices", "technique": "Scope", "isTrap": true },
+      { "text": "Make it sound mysterious", "technique": "Style", "isTrap": true }
+    ],
+    "solution": [0, 1, 2],
+    "explanation": "This technical prompt requires **Role** (database expert), **Format** (commented code), and **Step-by-Step** reasoning. Traps include mismatched formats (poetry), wrong technology (NoSQL), scope creep (security), and inappropriate tone (mysterious)."
+  },
+  {
+    "id": 4,
+    "basePrompt": "Write a product description.",
+    "targetText": "**Role:** E-commerce copywriter. **Task:** Write a product description for wireless headphones. **Audience:** Tech-savvy millennials. **Style:** Conversational and trendy. **Format:** 3 bullet points highlighting key features, followed by a call-to-action. **Constraint:** Maximum 100 words.",
+    "cards": [
+      { "text": "Act as an e-commerce copywriter", "technique": "Role", "isTrap": false },
+      { "text": "Target tech-savvy millennials", "technique": "Audience", "isTrap": false },
+      { "text": "Use a conversational and trendy style", "technique": "Style", "isTrap": false },
+      { "text": "Format as 3 bullet points with a call-to-action", "technique": "Format", "isTrap": false },
+      { "text": "Maximum 100 words", "technique": "Constraint", "isTrap": false },
+      { "text": "Write in formal academic language", "technique": "Style", "isTrap": true },
+      { "text": "Include technical specifications for engineers", "technique": "Audience", "isTrap": true },
+      { "text": "Compare to 10 different competing products", "technique": "Scope", "isTrap": true }
+    ],
+    "solution": [0, 1, 2, 3, 4],
+    "explanation": "This marketing prompt needs **Role**, **Audience**, **Style**, **Format**, and **Constraint**. Traps include conflicting style (formal academic), wrong audience (engineers), and scope creep (comparing many products)."
+  },
+  {
+    "id": 5,
+    "basePrompt": "Explain machine learning.",
+    "targetText": "**Role:** AI educator. **Task:** Explain supervised learning using a real-world example. **Audience:** High school students with no coding experience. **Exemplar:** Similar to how you'd explain 'teaching a dog tricks with treats as rewards.' **Constraint:** No code or mathematical formulas. **Format:** 2-3 short paragraphs.",
+    "cards": [
+      { "text": "Act as an AI educator", "technique": "Role", "isTrap": false },
+      { "text": "Target high school students with no coding experience", "technique": "Audience", "isTrap": false },
+      { "text": "Use an analogy like teaching a dog tricks", "technique": "Exemplar", "isTrap": false },
+      { "text": "Avoid code or mathematical formulas", "technique": "Constraint", "isTrap": false },
+      { "text": "Format as 2-3 short paragraphs", "technique": "Format", "isTrap": false },
+      { "text": "Include advanced calculus equations", "technique": "Constraint", "isTrap": true },
+      { "text": "Target PhD researchers in neural networks", "technique": "Audience", "isTrap": true },
+      { "text": "Write it as a haiku", "technique": "Format", "isTrap": true }
+    ],
+    "solution": [0, 1, 2, 3, 4],
+    "explanation": "This educational prompt needs **Role**, **Audience**, **Exemplar** (analogy), **Constraint** (no code), and **Format**. Traps include contradictory constraints (calculus), wrong audience (PhD), and unsuitable format (haiku)."
+  }
+]
