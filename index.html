@@ -3,97 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Prompt Engineer's Toolkit</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Learning Games Hub</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+        }
+
+        .hub-header {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .hub-header h1 {
+            font-size: 2.8rem;
+            color: #fff;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .hub-header p {
+            font-size: 1.15rem;
+            color: #a0b4d0;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin: 30px auto 0;
+            max-width: 700px;
+            padding: 0 20px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 16px 24px;
+            border: 2px solid #334;
+            background: rgba(255,255,255,0.05);
+            color: #a0b4d0;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .tab-btn:first-child {
+            border-radius: 10px 0 0 10px;
+        }
+
+        .tab-btn:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+
+        .tab-btn:hover {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            border-color: #667eea;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .tab-content {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .game-panel {
+            display: none;
+        }
+
+        .game-panel.active {
+            display: block;
+        }
+
+        .game-card {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        .game-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .game-card h2 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .game-card .description {
+            font-size: 1.05rem;
+            color: #a0b4d0;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .game-card .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 28px;
+        }
+
+        .game-card .tag {
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tag.purple { background: rgba(156, 39, 176, 0.25); color: #ce93d8; border: 1px solid rgba(156, 39, 176, 0.4); }
+        .tag.blue { background: rgba(33, 150, 243, 0.25); color: #90caf9; border: 1px solid rgba(33, 150, 243, 0.4); }
+        .tag.green { background: rgba(76, 175, 80, 0.25); color: #a5d6a7; border: 1px solid rgba(76, 175, 80, 0.4); }
+        .tag.orange { background: rgba(255, 152, 0, 0.25); color: #ffcc80; border: 1px solid rgba(255, 152, 0, 0.4); }
+
+        .play-btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .play-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .hub-footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #556;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .hub-header h1 { font-size: 2rem; }
+            .tab-btn { font-size: 0.9rem; padding: 12px 16px; }
+            .game-card { padding: 24px; }
+            .game-card h2 { font-size: 1.4rem; }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🎯 The Prompt Engineer's Toolkit</h1>
-            <p class="subtitle">Master the art of crafting effective prompts by combining the right techniques</p>
-        </header>
-
-        <div class="game-info">
-            <div class="score-panel">
-                <div class="score-item">
-                    <span class="label">Level:</span>
-                    <span id="current-level" class="value">1</span>
-                    <span class="label">/ <span id="total-levels">5</span></span>
-                </div>
-                <div class="score-item">
-                    <span class="label">Score:</span>
-                    <span id="score" class="value">0</span>
-                </div>
-            </div>
-        </div>
-
-        <div id="game-container">
-            <div class="prompt-section">
-                <h2>Base Prompt</h2>
-                <div id="base-prompt" class="prompt-box"></div>
-            </div>
-
-            <div class="target-section">
-                <h2>Target Prompt Structure</h2>
-                <div id="target-text" class="target-box"></div>
-                <p class="hint">💡 Select the cards that would transform the base prompt into this target structure</p>
-            </div>
-
-            <div class="cards-section">
-                <h2>Available Cards</h2>
-                <p class="instruction">Click cards to select/deselect them. Watch out for traps!</p>
-                <div id="cards-container" class="cards-grid"></div>
-            </div>
-
-            <div class="selected-section">
-                <h2>Your Selected Cards (<span id="selected-count">0</span>)</h2>
-                <div id="selected-cards" class="selected-cards-container"></div>
-            </div>
-
-            <div class="actions">
-                <button id="submit-btn" class="btn btn-primary">Submit Answer</button>
-                <button id="hint-btn" class="btn btn-secondary">Show Hint</button>
-            </div>
-
-            <div id="feedback" class="feedback hidden"></div>
-            <div id="explanation" class="explanation hidden"></div>
-
-            <div class="navigation hidden" id="navigation">
-                <button id="next-btn" class="btn btn-primary">Next Level →</button>
-            </div>
-        </div>
-
-        <div id="game-complete" class="game-complete hidden">
-            <h2>🎉 Congratulations!</h2>
-            <p>You've completed all levels!</p>
-            <div class="final-score">
-                <h3>Final Score: <span id="final-score">0</span></h3>
-            </div>
-            <div class="techniques-learned">
-                <h3>Techniques Mastered:</h3>
-                <ul id="techniques-list"></ul>
-            </div>
-            <button id="restart-btn" class="btn btn-primary">Play Again</button>
-        </div>
-
-        <footer>
-            <div class="technique-legend">
-                <h3>Prompting Techniques</h3>
-                <div class="legend-grid">
-                    <span class="legend-item"><span class="badge role">Role</span> Define AI's expertise</span>
-                    <span class="legend-item"><span class="badge constraint">Constraint</span> Limit scope/length</span>
-                    <span class="legend-item"><span class="badge format">Format</span> Structure output</span>
-                    <span class="legend-item"><span class="badge style">Style</span> Set tone</span>
-                    <span class="legend-item"><span class="badge audience">Audience</span> Tailor complexity</span>
-                    <span class="legend-item"><span class="badge exemplar">Exemplar</span> Provide examples</span>
-                    <span class="legend-item"><span class="badge step-by-step">Step-by-Step</span> Break down reasoning</span>
-                    <span class="legend-item"><span class="badge scope">Scope</span> Define boundaries</span>
-                    <span class="legend-item"><span class="badge analogy">Analogy</span> Compare concepts</span>
-                </div>
-            </div>
-        </footer>
+    <div class="hub-header">
+        <h1>Learning Games Hub</h1>
+        <p>Interactive games to sharpen your software engineering skills</p>
     </div>
 
-    <script src="game.js"></script>
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('prompt-engineer')">Prompt Engineer's Toolkit</button>
+        <button class="tab-btn" onclick="switchTab('ears-builder')">EARS Requirements Builder</button>
+    </div>
+
+    <div class="tab-content">
+        <div id="panel-prompt-engineer" class="game-panel active">
+            <div class="game-card">
+                <div class="game-icon">🎯</div>
+                <h2>The Prompt Engineer's Toolkit</h2>
+                <p class="description">
+                    Master the art of crafting effective AI prompts by selecting the right combination of
+                    techniques. Learn about roles, constraints, formatting, and more across 5 progressive levels.
+                </p>
+                <div class="tags">
+                    <span class="tag purple">5 Levels</span>
+                    <span class="tag blue">Card Selection</span>
+                    <span class="tag green">AI Prompting</span>
+                    <span class="tag orange">Trap Cards</span>
+                </div>
+                <a href="games/prompt-engineer/index.html" class="play-btn">Play Game</a>
+            </div>
+        </div>
+
+        <div id="panel-ears-builder" class="game-panel">
+            <div class="game-card">
+                <div class="game-icon">🏗</div>
+                <h2>EARS Requirements Builder</h2>
+                <p class="description">
+                    Learn to write proper EARS requirements by dragging components into the correct slots.
+                    Master five requirement patterns across three difficulty modes with 20 progressive levels.
+                </p>
+                <div class="tags">
+                    <span class="tag purple">20 Levels</span>
+                    <span class="tag blue">Drag & Drop</span>
+                    <span class="tag green">Requirements Engineering</span>
+                    <span class="tag orange">3 Difficulty Modes</span>
+                </div>
+                <a href="games/ears-builder/index.html" class="play-btn">Play Game</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hub-footer">
+        <p>Learning Games Hub &mdash; Build your skills through play</p>
+    </div>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.game-panel').forEach(panel => panel.classList.remove('active'));
+
+            event.currentTarget.classList.add('active');
+            document.getElementById('panel-' + tabId).classList.add('active');
+        }
+    </script>
 </body>
 </html>

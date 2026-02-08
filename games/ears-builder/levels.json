@@ -1,0 +1,830 @@
+[
+  {
+    "levelId": 1,
+    "difficulty": "beginner",
+    "scenario": {
+      "title": "Emergency Alarm System",
+      "description": "The fire alarm needs to sound whenever smoke is detected in any room.",
+      "context": "Building safety system with smoke detectors"
+    },
+    "correctPattern": "event-driven",
+    "patternOptions": ["ubiquitous", "event-driven", "state-driven"],
+    "dropZones": [
+      { "id": "keyword1", "label": "Trigger Word", "accepts": "keyword" },
+      { "id": "trigger", "label": "Trigger Event", "accepts": "trigger" },
+      { "id": "system", "label": "System", "accepts": "system" },
+      { "id": "action", "label": "Action", "accepts": "action" }
+    ],
+    "template": [
+      { "type": "drop", "zoneId": "keyword1" },
+      { "type": "drop", "zoneId": "trigger" },
+      { "type": "static", "text": ", the" },
+      { "type": "drop", "zoneId": "system" },
+      { "type": "static", "text": "shall" },
+      { "type": "drop", "zoneId": "action" }
+    ],
+    "componentBank": [
+      { "id": "k1", "text": "WHEN", "category": "keyword", "isTrap": false },
+      { "id": "k2", "text": "WHILE", "category": "keyword", "isTrap": true, "reason": "WHILE is for ongoing states, not triggered events" },
+      { "id": "t1", "text": "smoke is detected", "category": "trigger", "isTrap": false },
+      { "id": "t2", "text": "fire occurs", "category": "trigger", "isTrap": true, "reason": "Too vague - fire is the result, not the detectable event" },
+      { "id": "s1", "text": "alarm system", "category": "system", "isTrap": false },
+      { "id": "a1", "text": "sound an audible alarm", "category": "action", "isTrap": false },
+      { "id": "a2", "text": "notify authorities", "category": "action", "isTrap": true, "reason": "Should be a separate requirement - one action per requirement" }
+    ],
+    "solution": {
+      "keyword1": "k1",
+      "trigger": "t1",
+      "system": "s1",
+      "action": "a1"
+    },
+    "explanation": "Event-driven pattern is correct because smoke detection is a specific trigger event. WHEN is appropriate for one-time triggered events. The requirement is testable and clearly specifies the system and action."
+  },
+  {
+    "levelId": 2,
+    "difficulty": "beginner",
+    "scenario": {
+      "title": "Vehicle Speed Limit",
+      "description": "The vehicle navigation system must always display the current speed limit on the dashboard.",
+      "context": "Automotive navigation system for driver assistance"
+    },
+    "correctPattern": "ubiquitous",
+    "patternOptions": ["ubiquitous", "event-driven", "unwanted"],
+    "dropZones": [
+      { "id": "system", "label": "System", "accepts": "system" },
+      { "id": "action", "label": "Action", "accepts": "action" }
+    ],
+    "template": [
+      { "type": "static", "text": "The" },
+      { "type": "drop", "zoneId": "system" },
+      { "type": "static", "text": "shall" },
+      { "type": "drop", "zoneId": "action" }
+    ],
+    "componentBank": [
+      { "id": "s1", "text": "navigation system", "category": "system", "isTrap": false },
+      { "id": "s2", "text": "car", "category": "system", "isTrap": true, "reason": "'Car' is too vague - specify the exact system component" },
+      { "id": "a1", "text": "display the current speed limit on the dashboard", "category": "action", "isTrap": false },
+      { "id": "a2", "text": "show speed information", "category": "action", "isTrap": true, "reason": "'Speed information' is ambiguous - what kind of speed information?" }
+    ],
+    "solution": {
+      "system": "s1",
+      "action": "a1"
+    },
+    "explanation": "Ubiquitous pattern is correct because displaying the speed limit is something the system should always do - there's no trigger or condition. The requirement applies universally whenever the system is running."
+  },
+  {
+    "levelId": 3,
+    "difficulty": "beginner",
+    "scenario": {
+      "title": "Low Battery Warning",
+      "description": "The smartphone needs to show a warning icon when the battery drops below 10%.",
+      "context": "Mobile phone power management system"
+    },
+    "correctPattern": "event-driven",
+    "patternOptions": ["event-driven", "state-driven", "ubiquitous"],
+    "dropZones": [
+      { "id": "keyword1", "label": "Trigger Word", "accepts": "keyword" },
+      { "id": "trigger", "label": "Trigger Event", "accepts": "trigger" },
+      { "id": "system", "label": "System", "accepts": "system" },
+      { "id": "action", "label": "Action", "accepts": "action" }
+    ],
+    "template": [
+      { "type": "drop", "zoneId": "keyword1" },
+      { "type": "drop", "zoneId": "trigger" },
+      { "type": "static", "text": ", the" },
+      { "type": "drop", "zoneId": "system" },
+      { "type": "static", "text": "shall" },
+      { "type": "drop", "zoneId": "action" }
+    ],
+    "componentBank": [
+      { "id": "k1", "text": "WHEN", "category": "keyword", "isTrap": false },
+      { "id": "k2", "text": "IF", "category": "keyword", "isTrap": true, "reason": "IF/THEN is for unwanted behaviors and error handling, not triggered events" },
+      { "id": "t1", "text": "battery level drops below 10%", "category": "trigger", "isTrap": false },
+      { "id": "t2", "text": "battery is low", "category": "trigger", "isTrap": true, "reason": "'Low' is subjective and not testable - use a specific threshold" },
+      { "id": "s1", "text": "smartphone", "category": "system", "isTrap": false },
+      { "id": "a1", "text": "display a low battery warning icon", "category": "action", "isTrap": false },
+      { "id": "a2", "text": "handle the battery situation", "category": "action", "isTrap": true, "reason": "'Handle' is vague - not testable or measurable" }
+    ],
+    "solution": {
+      "keyword1": "k1",
+      "trigger": "t1",
+      "system": "s1",
+      "action": "a1"
+    },
+    "explanation": "Event-driven is correct because the battery dropping below 10% is a specific, detectable event that triggers an action. The trigger is measurable (10% threshold), and the action is specific and testable."
+  },
+  {
+    "levelId": 4,
+    "difficulty": "beginner",
+    "scenario": {
+      "title": "Data Encryption",
+      "description": "The database system must encrypt all stored user data at all times.",
+      "context": "Enterprise data protection and security system"
+    },
+    "correctPattern": "ubiquitous",
+    "patternOptions": ["ubiquitous", "event-driven", "optional"],
+    "dropZones": [
+      { "id": "system", "label": "System", "accepts": "system" },
+      { "id": "action", "label": "Action", "accepts": "action" }
+    ],
+    "template": [
+      { "type": "static", "text": "The" },
+      { "type": "drop", "zoneId": "system" },
+      { "type": "static", "text": "shall" },
+      { "type": "drop", "zoneId": "action" }
+    ],
+    "componentBank": [
+      { "id": "s1", "text": "database system", "category": "system", "isTrap": false },
+      { "id": "s2", "text": "server", "category": "system", "isTrap": true, "reason": "'Server' is too broad - the requirement is about the database specifically" },
+      { "id": "a1", "text": "encrypt all stored user data", "category": "action", "isTrap": false },
+      { "id": "a2", "text": "protect data using AES-256", "category": "action", "isTrap": true, "reason": "Specifies implementation (AES-256) rather than the what - requirements should not dictate how" }
+    ],
+    "solution": {
+      "system": "s1",
+      "action": "a1"
+    },
+    "explanation": "Ubiquitous pattern is correct because encryption should always apply - there's no specific trigger or condition. The action specifies what to do (encrypt) without dictating how (specific algorithm)."
+  },
+  {
+    "levelId": 5,
+    "difficulty": "beginner",
+    "scenario": {
+      "title": "Door Lock on Exit",
+      "description": "The smart lock system should automatically lock the door when the last person leaves the house.",
+      "context": "Smart home security and automation system"
+    },
+    "correctPattern": "event-driven",
+    "patternOptions": ["event-driven", "state-driven", "unwanted"],
+    "dropZones": [
+      { "id": "keyword1", "label": "Trigger Word", "accepts": "keyword" },
+      { "id": "trigger", "label": "Trigger Event", "accepts": "trigger" },
+      { "id": "system", "label": "System", "accepts": "system" },
+      { "id": "action", "label": "Action", "accepts": "action" }
+    ],
+    "template": [
+      { "type": "drop", "zoneId": "keyword1" },
+      { "type": "drop", "zoneId": "trigger" },
+      { "type": "static", "text": ", the" },
+      { "type": "drop", "zoneId": "system" },
+      { "type": "static", "text": "shall" },
+      { "type": "drop", "zoneId": "action" }
+    ],
+    "componentBank": [
+      { "id": "k1", "text": "WHEN", "category": "keyword", "isTrap": false },
+      { "id": "k2", "text": "WHILE", "category": "keyword", "isTrap": true, "reason": "WHILE implies an ongoing state. Leaving the house is a one-time event" },
+      { "id": "t1", "text": "the last person leaves the house", "category": "trigger", "isTrap": false },
+      { "id": "t2", "text": "nobody is home", "category": "trigger", "isTrap": true, "reason": "'Nobody is home' describes a state, not a trigger event - use WHILE for states" },
+      { "id": "s1", "text": "smart lock system", "category": "system", "isTrap": false },
+      { "id": "a1", "text": "lock the door", "category": "action", "isTrap": false },
+      { "id": "a2", "text": "secure the premises", "category": "action", "isTrap": true, "reason": "'Secure the premises' is vague and not directly testable" }
+    ],
+    "solution": {
+      "keyword1": "k1",
+      "trigger": "t1",
+      "system": "s1",
+      "action": "a1"
+    },
+    "explanation": "Event-driven is correct because 'the last person leaves' is a detectable event, not an ongoing state. Note the trap: 'nobody is home' describes a state (use WHILE), while 'leaves' describes an event (use WHEN)."
+  },
+  {
+    "levelId": 6,
+    "difficulty": "intermediate",
+    "scenario": {
+      "title": "Energy Saving Thermostat",
+      "description": "The smart thermostat needs to activate energy-saving mode automatically whenever the house is empty to reduce electricity costs.",
+      "context": "Smart home energy management system"
+    },
+    "correctPattern": "event-driven",
+    "patternOptions": ["ubiquitous", "event-driven", "state-driven", "unwanted", "optional"],
+    "dropZones": [
+      { "id": "keyword1", "label": "Keyword", "accepts": "keyword" },
+      { "id": "trigger", "label": "Trigger/Condition", "accepts": "trigger" },
+      { "id": "system", "label": "System", "accepts": "system" },
+      { "id": "action", "label": "Action", "accepts": "action" }
+    ],
+    "template": [
+      { "type": "drop", "zoneId": "keyword1" },
+      { "type": "drop", "zoneId": "trigger" },
+      { "type": "static", "text": ", the" },
+      { "type": "drop", "zoneId": "system" },
+      { "type": "static", "text": "shall" },
+      { "type": "drop", "zoneId": "action" }
+    ],
+    "componentBank": [
+      { "id": "k1", "text": "WHEN", "category": "keyword", "isTrap": false },
+      { "id": "k2", "text": "WHILE", "category": "keyword", "isTrap": true, "reason": "The house becoming empty is a trigger event, not an ongoing state" },
+      { "id": "k3", "text": "IF", "category": "keyword", "isTrap": true, "reason": "IF/THEN is for unwanted behaviors, not triggered events" },
+      { "id": "t1", "text": "house becomes unoccupied", "category": "trigger", "isTrap": false },
+      { "id": "t2", "text": "user leaves", "category": "trigger", "isTrap": true, "reason": "Ambiguous - which user? A specific person leaving doesn't mean the house is empty" },
+      { "id": "s1", "text": "smart thermostat", "category": "system", "isTrap": false },
+      { "id": "s2", "text": "energy system", "category": "system", "isTrap": true, "reason": "'Energy system' is too broad and vague" },
+      { "id": "a1", "text": "activate energy-saving mode", "category": "action", "isTrap": false },
+      { "id": "a2", "text": "reduce costs", "category": "action", "isTrap": true, "reason": "'Reduce costs' is a business goal, not a testable system action" }
+    ],
+    "solution": {
+      "keyword1": "k1",
+      "trigger": "t1",
+      "system": "s1",
+      "action": "a1"
+    },
+    "explanation": "Event-driven pattern is correct because the house becoming empty is a specific trigger event. WHEN is appropriate for this one-time event. 'Reduce costs' is a goal, not a testable action - 'activate energy-saving mode' is specific and verifiable."
+  },
+  {
+    "levelId": 7,
+    "difficulty": "intermediate",
+    "scenario": {
+      "title": "Maintenance Mode Restrictions",
+      "description": "During maintenance mode, the web application should prevent any new user registrations from being processed.",
+      "context": "Web application with scheduled maintenance windows"
+    },
+    "correctPattern": "state-driven",
+    "patternOptions": ["ubiquitous", "event-driven", "state-driven", "unwanted", "optional"],
+    "dropZones": [
+      { "id": "keyword1", "label": "Keyword", "accepts": "keyword" },
+      { "id": "condition", "label": "State/Condition", "accepts": "condition" },
+      { "id": "system", "label": "System", "accepts": "system" },
+      { "id": "action", "label": "Action", "accepts": "action" }
+    ],
+    "template": [
+      { "type": "drop", "zoneId": "keyword1" },
+      { "type": "drop", "zoneId": "condition" },
+      { "type": "static", "text": ", the" },
+      { "type": "drop", "zoneId": "system" },
+      { "type": "static", "text": "shall" },
+      { "type": "drop", "zoneId": "action" }
+    ],
+    "componentBank": [
+      { "id": "k1", "text": "WHILE", "category": "keyword", "isTrap": false },
+      { "id": "k2", "text": "WHEN", "category": "keyword", "isTrap": true, "reason": "WHEN is for one-time events. Maintenance mode is an ongoing state" },
+      { "id": "k3", "text": "IF", "category": "keyword", "isTrap": true, "reason": "IF/THEN is for unwanted/error behaviors, not ongoing states" },
+      { "id": "c1", "text": "in maintenance mode", "category": "condition", "isTrap": false },
+      { "id": "c2", "text": "maintenance starts", "category": "condition", "isTrap": true, "reason": "'Starts' implies a one-time event, not the ongoing state of being in maintenance" },
+      { "id": "s1", "text": "web application", "category": "system", "isTrap": false },
+      { "id": "a1", "text": "reject new user registration requests", "category": "action", "isTrap": false },
+      { "id": "a2", "text": "handle registrations appropriately", "category": "action", "isTrap": true, "reason": "'Appropriately' is subjective and not testable" }
+    ],
+    "solution": {
+      "keyword1": "k1",
+      "condition": "c1",
+      "system": "s1",
+      "action": "a1"
+    },
+    "explanation": "State-driven pattern is correct because 'maintenance mode' is an ongoing state, not a one-time event. WHILE indicates continuous behavior during the entire duration of the state."
+  },
+  {
+    "levelId": 8,
+    "difficulty": "intermediate",
+    "scenario": {
+      "title": "Payment Failure Handling",
+      "description": "When a credit card payment is declined, the checkout system must display an error message with the reason for decline.",
+      "context": "E-commerce payment processing system"
+    },
+    "correctPattern": "unwanted",
+    "patternOptions": ["ubiquitous", "event-driven", "state-driven", "unwanted", "optional"],
+    "dropZones": [
+      { "id": "keyword1", "label": "Keyword", "accepts": "keyword" },
+      { "id": "condition", "label": "Condition", "accepts": "condition" },
+      { "id": "keyword2", "label": "Then Keyword", "accepts": "keyword" },
+      { "id": "system", "label": "System", "accepts": "system" },
+      { "id": "action", "label": "Action", "accepts": "action" }
+    ],
+    "template": [
+      { "type": "drop", "zoneId": "keyword1" },
+      { "type": "drop", "zoneId": "condition" },
+      { "type": "static", "text": "," },
+      { "type": "drop", "zoneId": "keyword2" },
+      { "type": "static", "text": "the" },
+      { "type": "drop", "zoneId": "system" },
+      { "type": "static", "text": "shall" },
+      { "type": "drop", "zoneId": "action" }
+    ],
+    "componentBank": [
+      { "id": "k1", "text": "IF", "category": "keyword", "isTrap": false },
+      { "id": "k2", "text": "THEN", "category": "keyword", "isTrap": false },
+      { "id": "k3", "text": "WHEN", "category": "keyword", "isTrap": true, "reason": "WHEN is for expected events. Payment failure is an unwanted/error condition" },
+      { "id": "k4", "text": "WHILE", "category": "keyword", "isTrap": true, "reason": "WHILE is for ongoing states, not conditional error handling" },
+      { "id": "c1", "text": "a credit card payment is declined", "category": "condition", "isTrap": false },
+      { "id": "c2", "text": "payment fails", "category": "condition", "isTrap": true, "reason": "'Fails' is vague - declined is more specific and testable" },
+      { "id": "s1", "text": "checkout system", "category": "system", "isTrap": false },
+      { "id": "a1", "text": "display an error message with the decline reason", "category": "action", "isTrap": false },
+      { "id": "a2", "text": "handle the error", "category": "action", "isTrap": true, "reason": "'Handle the error' is vague - not testable or measurable" }
+    ],
+    "solution": {
+      "keyword1": "k1",
+      "condition": "c1",
+      "keyword2": "k2",
+      "system": "s1",
+      "action": "a1"
+    },
+    "explanation": "Unwanted behavior (IF/THEN) is correct because a declined payment is an error/exceptional condition. IF/THEN is specifically designed for fault tolerance and error handling scenarios."
+  },
+  {
+    "levelId": 9,
+    "difficulty": "intermediate",
+    "scenario": {
+      "title": "Premium Streaming Quality",
+      "description": "For users who have a premium subscription, the streaming service should offer 4K video quality.",
+      "context": "Video streaming platform with tiered subscriptions"
+    },
+    "correctPattern": "optional",
+    "patternOptions": ["ubiquitous", "event-driven", "state-driven", "unwanted", "optional"],
+    "dropZones": [
+      { "id": "keyword1", "label": "Keyword", "accepts": "keyword" },
+      { "id": "condition", "label": "Feature Condition", "accepts": "condition" },
+      { "id": "system", "label": "System", "accepts": "system" },
+      { "id": "action", "label": "Action", "accepts": "action" }
+    ],
+    "template": [
+      { "type": "drop", "zoneId": "keyword1" },
+      { "type": "drop", "zoneId": "condition" },
+      { "type": "static", "text": ", the" },
+      { "type": "drop", "zoneId": "system" },
+      { "type": "static", "text": "shall" },
+      { "type": "drop", "zoneId": "action" }
+    ],
+    "componentBank": [
+      { "id": "k1", "text": "WHERE", "category": "keyword", "isTrap": false },
+      { "id": "k2", "text": "WHEN", "category": "keyword", "isTrap": true, "reason": "WHEN is for events. Premium subscription is a feature inclusion, not an event" },
+      { "id": "k3", "text": "IF", "category": "keyword", "isTrap": true, "reason": "IF/THEN is for unwanted behaviors, not optional features" },
+      { "id": "c1", "text": "premium subscription is active", "category": "condition", "isTrap": false },
+      { "id": "c2", "text": "user pays more", "category": "condition", "isTrap": true, "reason": "'Pays more' is vague and not a testable feature condition" },
+      { "id": "s1", "text": "streaming service", "category": "system", "isTrap": false },
+      { "id": "a1", "text": "offer 4K video quality", "category": "action", "isTrap": false },
+      { "id": "a2", "text": "provide better quality", "category": "action", "isTrap": true, "reason": "'Better quality' is relative and not measurable" }
+    ],
+    "solution": {
+      "keyword1": "k1",
+      "condition": "c1",
+      "system": "s1",
+      "action": "a1"
+    },
+    "explanation": "Optional feature (WHERE) is correct because 4K quality is tied to an optional feature (premium subscription). WHERE scopes the requirement to users with a specific feature/tier."
+  },
+  {
+    "levelId": 10,
+    "difficulty": "intermediate",
+    "scenario": {
+      "title": "Autopilot Altitude Hold",
+      "description": "While the autopilot is engaged, the flight control system should continuously maintain the selected altitude.",
+      "context": "Aircraft flight control and autopilot system"
+    },
+    "correctPattern": "state-driven",
+    "patternOptions": ["ubiquitous", "event-driven", "state-driven", "unwanted", "optional"],
+    "dropZones": [
+      { "id": "keyword1", "label": "Keyword", "accepts": "keyword" },
+      { "id": "condition", "label": "State", "accepts": "condition" },
+      { "id": "system", "label": "System", "accepts": "system" },
+      { "id": "action", "label": "Action", "accepts": "action" }
+    ],
+    "template": [
+      { "type": "drop", "zoneId": "keyword1" },
+      { "type": "drop", "zoneId": "condition" },
+      { "type": "static", "text": ", the" },
+      { "type": "drop", "zoneId": "system" },
+      { "type": "static", "text": "shall" },
+      { "type": "drop", "zoneId": "action" }
+    ],
+    "componentBank": [
+      { "id": "k1", "text": "WHILE", "category": "keyword", "isTrap": false },
+      { "id": "k2", "text": "WHEN", "category": "keyword", "isTrap": true, "reason": "WHEN is for events. Autopilot being engaged is a continuous state" },
+      { "id": "c1", "text": "autopilot is engaged", "category": "condition", "isTrap": false },
+      { "id": "c2", "text": "pilot activates autopilot", "category": "condition", "isTrap": true, "reason": "'Activates' describes the event of turning it on, not the ongoing state" },
+      { "id": "s1", "text": "flight control system", "category": "system", "isTrap": false },
+      { "id": "s2", "text": "airplane", "category": "system", "isTrap": true, "reason": "'Airplane' is too broad - specify the system component" },
+      { "id": "a1", "text": "maintain the selected altitude", "category": "action", "isTrap": false },
+      { "id": "a2", "text": "fly at the right height", "category": "action", "isTrap": true, "reason": "'Right height' is subjective - 'selected altitude' is precise and testable" }
+    ],
+    "solution": {
+      "keyword1": "k1",
+      "condition": "c1",
+      "system": "s1",
+      "action": "a1"
+    },
+    "explanation": "State-driven (WHILE) is correct because 'autopilot engaged' is a continuous state. The system must maintain altitude for the entire duration of this state, not just once when it starts."
+  },
+  {
+    "levelId": 11,
+    "difficulty": "intermediate",
+    "scenario": {
+      "title": "Session Timeout",
+      "description": "If a user has been inactive for 30 minutes, the banking application should automatically log them out for security.",
+      "context": "Online banking security system"
+    },
+    "correctPattern": "unwanted",
+    "patternOptions": ["ubiquitous", "event-driven", "state-driven", "unwanted", "optional"],
+    "dropZones": [
+      { "id": "keyword1", "label": "Keyword", "accepts": "keyword" },
+      { "id": "condition", "label": "Condition", "accepts": "condition" },
+      { "id": "keyword2", "label": "Then Keyword", "accepts": "keyword" },
+      { "id": "system", "label": "System", "accepts": "system" },
+      { "id": "action", "label": "Action", "accepts": "action" }
+    ],
+    "template": [
+      { "type": "drop", "zoneId": "keyword1" },
+      { "type": "drop", "zoneId": "condition" },
+      { "type": "static", "text": "," },
+      { "type": "drop", "zoneId": "keyword2" },
+      { "type": "static", "text": "the" },
+      { "type": "drop", "zoneId": "system" },
+      { "type": "static", "text": "shall" },
+      { "type": "drop", "zoneId": "action" }
+    ],
+    "componentBank": [
+      { "id": "k1", "text": "IF", "category": "keyword", "isTrap": false },
+      { "id": "k2", "text": "THEN", "category": "keyword", "isTrap": false },
+      { "id": "k3", "text": "WHEN", "category": "keyword", "isTrap": true, "reason": "Session timeout is a security edge condition, making IF/THEN more appropriate than WHEN" },
+      { "id": "c1", "text": "a user has been inactive for 30 minutes", "category": "condition", "isTrap": false },
+      { "id": "c2", "text": "user is idle", "category": "condition", "isTrap": true, "reason": "'Idle' is vague - how long? The 30-minute threshold makes it testable" },
+      { "id": "s1", "text": "banking application", "category": "system", "isTrap": false },
+      { "id": "a1", "text": "automatically log the user out", "category": "action", "isTrap": false },
+      { "id": "a2", "text": "end the session and clear cache and notify admin", "category": "action", "isTrap": true, "reason": "Multiple actions in one requirement - each should be a separate requirement" }
+    ],
+    "solution": {
+      "keyword1": "k1",
+      "condition": "c1",
+      "keyword2": "k2",
+      "system": "s1",
+      "action": "a1"
+    },
+    "explanation": "Unwanted behavior (IF/THEN) is correct because session timeout is a security edge case. The 30-minute threshold makes the condition testable. The trap combines multiple actions - each action should be its own requirement."
+  },
+  {
+    "levelId": 12,
+    "difficulty": "intermediate",
+    "scenario": {
+      "title": "GPS Tracking for Fleet",
+      "description": "The fleet management system must always record the GPS coordinates of each vehicle every 30 seconds.",
+      "context": "Commercial fleet tracking and logistics platform"
+    },
+    "correctPattern": "ubiquitous",
+    "patternOptions": ["ubiquitous", "event-driven", "state-driven", "unwanted", "optional"],
+    "dropZones": [
+      { "id": "system", "label": "System", "accepts": "system" },
+      { "id": "action", "label": "Action", "accepts": "action" }
+    ],
+    "template": [
+      { "type": "static", "text": "The" },
+      { "type": "drop", "zoneId": "system" },
+      { "type": "static", "text": "shall" },
+      { "type": "drop", "zoneId": "action" }
+    ],
+    "componentBank": [
+      { "id": "s1", "text": "fleet management system", "category": "system", "isTrap": false },
+      { "id": "s2", "text": "GPS", "category": "system", "isTrap": true, "reason": "GPS is a technology, not the system. The fleet management system uses GPS" },
+      { "id": "a1", "text": "record GPS coordinates of each vehicle every 30 seconds", "category": "action", "isTrap": false },
+      { "id": "a2", "text": "track vehicles regularly", "category": "action", "isTrap": true, "reason": "'Regularly' is vague - every 30 seconds is specific and testable" },
+      { "id": "k1", "text": "WHEN", "category": "keyword", "isTrap": true, "reason": "No trigger needed - this is a continuous ubiquitous requirement" },
+      { "id": "k2", "text": "WHILE", "category": "keyword", "isTrap": true, "reason": "No state condition needed - tracking should always happen" }
+    ],
+    "solution": {
+      "system": "s1",
+      "action": "a1"
+    },
+    "explanation": "Ubiquitous pattern is correct because GPS tracking should always happen - no trigger or condition is needed. The action is specific with a measurable interval (30 seconds)."
+  },
+  {
+    "levelId": 13,
+    "difficulty": "advanced",
+    "scenario": {
+      "title": "Medical Alert System",
+      "description": "When a patient's heart rate exceeds 120 BPM, the monitoring system should trigger an alert on the nurse's station display.",
+      "context": "Hospital patient monitoring system"
+    },
+    "correctPattern": "event-driven",
+    "patternOptions": ["ubiquitous", "event-driven", "state-driven", "unwanted", "optional"],
+    "dropZones": [
+      { "id": "keyword1", "label": "Keyword", "accepts": "keyword" },
+      { "id": "trigger", "label": "Trigger Event", "accepts": "trigger" },
+      { "id": "system", "label": "System", "accepts": "system" },
+      { "id": "action", "label": "Action", "accepts": "action" }
+    ],
+    "template": [
+      { "type": "drop", "zoneId": "keyword1" },
+      { "type": "drop", "zoneId": "trigger" },
+      { "type": "static", "text": ", the" },
+      { "type": "drop", "zoneId": "system" },
+      { "type": "static", "text": "shall" },
+      { "type": "drop", "zoneId": "action" }
+    ],
+    "componentBank": [
+      { "id": "k1", "text": "WHEN", "category": "keyword", "isTrap": false },
+      { "id": "k2", "text": "WHILE", "category": "keyword", "isTrap": true, "reason": "Heart rate exceeding a threshold is a detectable event, not an ongoing state" },
+      { "id": "k3", "text": "IF", "category": "keyword", "isTrap": true, "reason": "This is a normal monitoring trigger, not an unwanted/error behavior" },
+      { "id": "t1", "text": "a patient's heart rate exceeds 120 BPM", "category": "trigger", "isTrap": false },
+      { "id": "t2", "text": "heart rate is abnormal", "category": "trigger", "isTrap": true, "reason": "'Abnormal' is subjective - 120 BPM is a specific, testable threshold" },
+      { "id": "t3", "text": "patient is in danger", "category": "trigger", "isTrap": true, "reason": "'In danger' is a medical judgment, not a measurable event" },
+      { "id": "s1", "text": "monitoring system", "category": "system", "isTrap": false },
+      { "id": "s2", "text": "hospital", "category": "system", "isTrap": true, "reason": "'Hospital' is an organization, not a system component" },
+      { "id": "a1", "text": "trigger an alert on the nurse station display", "category": "action", "isTrap": false },
+      { "id": "a2", "text": "notify someone immediately", "category": "action", "isTrap": true, "reason": "'Someone' is vague - who? 'Immediately' is not measurable" }
+    ],
+    "solution": {
+      "keyword1": "k1",
+      "trigger": "t1",
+      "system": "s1",
+      "action": "a1"
+    },
+    "explanation": "Event-driven is correct - heart rate exceeding a threshold is a specific, measurable event. The traps demonstrate common mistakes: vague triggers ('abnormal', 'in danger'), non-specific system ('hospital'), and vague actions ('notify someone')."
+  },
+  {
+    "levelId": 14,
+    "difficulty": "advanced",
+    "scenario": {
+      "title": "Network Connection Loss",
+      "description": "If the connection to the central server is lost, the IoT device should store data locally and sync when reconnected.",
+      "context": "Industrial IoT sensor network with intermittent connectivity"
+    },
+    "correctPattern": "unwanted",
+    "patternOptions": ["ubiquitous", "event-driven", "state-driven", "unwanted", "optional"],
+    "dropZones": [
+      { "id": "keyword1", "label": "Keyword", "accepts": "keyword" },
+      { "id": "condition", "label": "Condition", "accepts": "condition" },
+      { "id": "keyword2", "label": "Then Keyword", "accepts": "keyword" },
+      { "id": "system", "label": "System", "accepts": "system" },
+      { "id": "action", "label": "Action", "accepts": "action" }
+    ],
+    "template": [
+      { "type": "drop", "zoneId": "keyword1" },
+      { "type": "drop", "zoneId": "condition" },
+      { "type": "static", "text": "," },
+      { "type": "drop", "zoneId": "keyword2" },
+      { "type": "static", "text": "the" },
+      { "type": "drop", "zoneId": "system" },
+      { "type": "static", "text": "shall" },
+      { "type": "drop", "zoneId": "action" }
+    ],
+    "componentBank": [
+      { "id": "k1", "text": "IF", "category": "keyword", "isTrap": false },
+      { "id": "k2", "text": "THEN", "category": "keyword", "isTrap": false },
+      { "id": "k3", "text": "WHEN", "category": "keyword", "isTrap": true, "reason": "Connection loss is an unwanted condition best handled with IF/THEN" },
+      { "id": "k4", "text": "WHERE", "category": "keyword", "isTrap": true, "reason": "WHERE is for optional features, not error conditions" },
+      { "id": "c1", "text": "connection to the central server is lost", "category": "condition", "isTrap": false },
+      { "id": "c2", "text": "there are network problems", "category": "condition", "isTrap": true, "reason": "'Network problems' is vague - connection loss is specific and detectable" },
+      { "id": "s1", "text": "IoT device", "category": "system", "isTrap": false },
+      { "id": "a1", "text": "store sensor data locally until connection is restored", "category": "action", "isTrap": false },
+      { "id": "a2", "text": "store data locally and sync when reconnected", "category": "action", "isTrap": true, "reason": "Two actions combined - storing and syncing should be separate requirements" },
+      { "id": "a3", "text": "handle the situation gracefully", "category": "action", "isTrap": true, "reason": "'Handle gracefully' is vague and not testable" }
+    ],
+    "solution": {
+      "keyword1": "k1",
+      "condition": "c1",
+      "keyword2": "k2",
+      "system": "s1",
+      "action": "a1"
+    },
+    "explanation": "Unwanted behavior (IF/THEN) is correct because connection loss is a fault/error condition. Notice the action trap - 'store and sync' should be split into two separate requirements for clarity and testability."
+  },
+  {
+    "levelId": 15,
+    "difficulty": "advanced",
+    "scenario": {
+      "title": "Parental Controls",
+      "description": "For families that have enabled parental controls, the streaming app should filter content based on the configured age rating.",
+      "context": "Family-oriented video streaming application"
+    },
+    "correctPattern": "optional",
+    "patternOptions": ["ubiquitous", "event-driven", "state-driven", "unwanted", "optional"],
+    "dropZones": [
+      { "id": "keyword1", "label": "Keyword", "accepts": "keyword" },
+      { "id": "condition", "label": "Feature Condition", "accepts": "condition" },
+      { "id": "system", "label": "System", "accepts": "system" },
+      { "id": "action", "label": "Action", "accepts": "action" }
+    ],
+    "template": [
+      { "type": "drop", "zoneId": "keyword1" },
+      { "type": "drop", "zoneId": "condition" },
+      { "type": "static", "text": ", the" },
+      { "type": "drop", "zoneId": "system" },
+      { "type": "static", "text": "shall" },
+      { "type": "drop", "zoneId": "action" }
+    ],
+    "componentBank": [
+      { "id": "k1", "text": "WHERE", "category": "keyword", "isTrap": false },
+      { "id": "k2", "text": "WHILE", "category": "keyword", "isTrap": true, "reason": "WHILE is for ongoing states. Parental controls are an optional feature, not a state" },
+      { "id": "k3", "text": "WHEN", "category": "keyword", "isTrap": true, "reason": "WHEN is for events. Feature inclusion is not an event" },
+      { "id": "k4", "text": "IF", "category": "keyword", "isTrap": true, "reason": "IF/THEN is for unwanted behaviors. This is a normal optional feature" },
+      { "id": "c1", "text": "parental controls are enabled", "category": "condition", "isTrap": false },
+      { "id": "c2", "text": "children are watching", "category": "condition", "isTrap": true, "reason": "'Children are watching' is not reliably detectable by the system" },
+      { "id": "s1", "text": "streaming application", "category": "system", "isTrap": false },
+      { "id": "a1", "text": "filter content based on the configured age rating", "category": "action", "isTrap": false },
+      { "id": "a2", "text": "block inappropriate content", "category": "action", "isTrap": true, "reason": "'Inappropriate' is subjective - 'configured age rating' provides a testable standard" }
+    ],
+    "solution": {
+      "keyword1": "k1",
+      "condition": "c1",
+      "system": "s1",
+      "action": "a1"
+    },
+    "explanation": "Optional feature (WHERE) is correct because parental controls are a feature that may or may not be enabled. WHERE scopes requirements to optional functionality, making it clear this only applies when the feature is included."
+  },
+  {
+    "levelId": 16,
+    "difficulty": "advanced",
+    "scenario": {
+      "title": "Fix: Elevator Door Requirement",
+      "description": "Review this elevator control requirement and fix the issues.",
+      "context": "Building elevator control system"
+    },
+    "correctPattern": "event-driven",
+    "mode": "inspector",
+    "brokenRequirement": {
+      "text": "WHILE the elevator arrives at a floor, the elevator SHALL open the doors quickly.",
+      "issues": [
+        {
+          "id": "issue1",
+          "brokenText": "WHILE",
+          "fixText": "WHEN",
+          "reason": "Arriving at a floor is a one-time event, not an ongoing state. Use WHEN for events."
+        },
+        {
+          "id": "issue2",
+          "brokenText": "elevator",
+          "fixText": "door controller",
+          "reason": "'Elevator' is too broad. The door controller is the specific system responsible for door operations."
+        },
+        {
+          "id": "issue3",
+          "brokenText": "open the doors quickly",
+          "fixText": "open the doors",
+          "reason": "'Quickly' is a non-functional performance requirement mixed with a functional requirement. Remove or specify separately."
+        }
+      ]
+    },
+    "componentBank": [
+      { "id": "fix1", "text": "WHEN", "category": "keyword", "isTrap": false },
+      { "id": "fix2", "text": "door controller", "category": "system", "isTrap": false },
+      { "id": "fix3", "text": "open the doors", "category": "action", "isTrap": false },
+      { "id": "trap1", "text": "IF", "category": "keyword", "isTrap": true, "reason": "Floor arrival is expected behavior, not an error condition" },
+      { "id": "trap2", "text": "elevator system", "category": "system", "isTrap": true, "reason": "Still too broad - specify the component responsible" },
+      { "id": "trap3", "text": "open doors and announce floor", "category": "action", "isTrap": true, "reason": "Combines two actions - each should be a separate requirement" }
+    ],
+    "explanation": "Three issues: (1) WHILE should be WHEN because floor arrival is an event, (2) 'elevator' should be 'door controller' for specificity, (3) 'quickly' is a non-functional qualifier that should be a separate performance requirement."
+  },
+  {
+    "levelId": 17,
+    "difficulty": "advanced",
+    "scenario": {
+      "title": "Fix: Login Security Requirement",
+      "description": "Review this login security requirement and fix the issues.",
+      "context": "Web application authentication system"
+    },
+    "correctPattern": "unwanted",
+    "mode": "inspector",
+    "brokenRequirement": {
+      "text": "WHEN three failed login attempts occur, the system SHALL handle the security breach using SHA-256.",
+      "issues": [
+        {
+          "id": "issue1",
+          "brokenText": "WHEN",
+          "fixText": "IF",
+          "reason": "Failed login attempts are an unwanted/error condition. Use IF/THEN for fault handling."
+        },
+        {
+          "id": "issue2",
+          "brokenText": "handle the security breach",
+          "fixText": "lock the user account for 15 minutes",
+          "reason": "'Handle the security breach' is vague and not testable. Specify the exact action."
+        },
+        {
+          "id": "issue3",
+          "brokenText": "using SHA-256",
+          "fixText": "",
+          "reason": "'Using SHA-256' specifies implementation details. Requirements should state what, not how."
+        }
+      ]
+    },
+    "componentBank": [
+      { "id": "fix1", "text": "IF", "category": "keyword", "isTrap": false },
+      { "id": "fix2", "text": "lock the user account for 15 minutes", "category": "action", "isTrap": false },
+      { "id": "fix3", "text": "(remove)", "category": "action", "isTrap": false },
+      { "id": "trap1", "text": "WHILE", "category": "keyword", "isTrap": true, "reason": "Three failed attempts is a condition, not an ongoing state" },
+      { "id": "trap2", "text": "respond to the incident", "category": "action", "isTrap": true, "reason": "Still vague - what does 'respond' mean specifically?" },
+      { "id": "trap3", "text": "using bcrypt instead", "category": "action", "isTrap": true, "reason": "Still specifying implementation - requirements should state what, not how" }
+    ],
+    "explanation": "Three issues: (1) WHEN should be IF because failed logins are an error condition, (2) 'handle the security breach' is vague - 'lock account for 15 minutes' is testable, (3) 'using SHA-256' is an implementation detail that doesn't belong in requirements."
+  },
+  {
+    "levelId": 18,
+    "difficulty": "advanced",
+    "scenario": {
+      "title": "Fix: Autonomous Vehicle Requirement",
+      "description": "Review this autonomous vehicle requirement and fix the issues.",
+      "context": "Self-driving car collision avoidance system"
+    },
+    "correctPattern": "event-driven",
+    "mode": "inspector",
+    "brokenRequirement": {
+      "text": "WHEN an obstacle is detected, SHALL stop the vehicle and alert passengers and log the event.",
+      "issues": [
+        {
+          "id": "issue1",
+          "brokenText": "SHALL stop",
+          "fixText": "the collision avoidance system shall apply emergency braking",
+          "reason": "Missing system name. Every EARS requirement must specify which system performs the action."
+        },
+        {
+          "id": "issue2",
+          "brokenText": "stop the vehicle and alert passengers and log the event",
+          "fixText": "apply emergency braking",
+          "reason": "Three actions combined into one requirement. Each action (stop, alert, log) should be a separate requirement."
+        }
+      ]
+    },
+    "componentBank": [
+      { "id": "fix1", "text": "the collision avoidance system shall", "category": "system", "isTrap": false },
+      { "id": "fix2", "text": "apply emergency braking", "category": "action", "isTrap": false },
+      { "id": "trap1", "text": "the car shall", "category": "system", "isTrap": true, "reason": "'Car' is too broad - specify the system component" },
+      { "id": "trap2", "text": "ensure safety", "category": "action", "isTrap": true, "reason": "'Ensure safety' is a goal, not a testable action" },
+      { "id": "trap3", "text": "stop and alert quickly", "category": "action", "isTrap": true, "reason": "Still multiple actions, and 'quickly' is non-functional" }
+    ],
+    "explanation": "Two critical issues: (1) Missing system - 'SHALL stop' lacks a named system component. (2) Three actions combined - stopping, alerting, and logging should each be separate requirements for testability and traceability."
+  },
+  {
+    "levelId": 19,
+    "difficulty": "advanced",
+    "scenario": {
+      "title": "Drone Geofencing",
+      "description": "While the drone is operating in a restricted airspace zone, the drone flight controller must limit its maximum altitude to 400 feet.",
+      "context": "Commercial drone operations management system"
+    },
+    "correctPattern": "state-driven",
+    "patternOptions": ["ubiquitous", "event-driven", "state-driven", "unwanted", "optional"],
+    "dropZones": [
+      { "id": "keyword1", "label": "Keyword", "accepts": "keyword" },
+      { "id": "condition", "label": "State", "accepts": "condition" },
+      { "id": "system", "label": "System", "accepts": "system" },
+      { "id": "action", "label": "Action", "accepts": "action" }
+    ],
+    "template": [
+      { "type": "drop", "zoneId": "keyword1" },
+      { "type": "drop", "zoneId": "condition" },
+      { "type": "static", "text": ", the" },
+      { "type": "drop", "zoneId": "system" },
+      { "type": "static", "text": "shall" },
+      { "type": "drop", "zoneId": "action" }
+    ],
+    "componentBank": [
+      { "id": "k1", "text": "WHILE", "category": "keyword", "isTrap": false },
+      { "id": "k2", "text": "WHEN", "category": "keyword", "isTrap": true, "reason": "Being in restricted airspace is a continuous state, not a one-time event" },
+      { "id": "k3", "text": "WHERE", "category": "keyword", "isTrap": true, "reason": "WHERE is for optional features, not operational states" },
+      { "id": "k4", "text": "IF", "category": "keyword", "isTrap": true, "reason": "Being in restricted airspace is a known operational state, not an error condition" },
+      { "id": "c1", "text": "operating in a restricted airspace zone", "category": "condition", "isTrap": false },
+      { "id": "c2", "text": "near an airport", "category": "condition", "isTrap": true, "reason": "'Near' is subjective - restricted airspace zone is a defined boundary" },
+      { "id": "c3", "text": "entering restricted airspace", "category": "condition", "isTrap": true, "reason": "'Entering' describes the event of crossing the boundary, not the state of being inside it" },
+      { "id": "s1", "text": "drone flight controller", "category": "system", "isTrap": false },
+      { "id": "s2", "text": "drone", "category": "system", "isTrap": true, "reason": "'Drone' is the whole vehicle - 'flight controller' is the specific system component" },
+      { "id": "a1", "text": "limit maximum altitude to 400 feet", "category": "action", "isTrap": false },
+      { "id": "a2", "text": "restrict altitude appropriately", "category": "action", "isTrap": true, "reason": "'Appropriately' is not measurable - 400 feet is a specific, testable limit" }
+    ],
+    "solution": {
+      "keyword1": "k1",
+      "condition": "c1",
+      "system": "s1",
+      "action": "a1"
+    },
+    "explanation": "State-driven (WHILE) is correct because being in restricted airspace is an ongoing operational state. The altitude limit must be maintained continuously while this state persists. Note the distinction between 'entering' (event) and 'operating in' (state)."
+  },
+  {
+    "levelId": 20,
+    "difficulty": "advanced",
+    "scenario": {
+      "title": "Fix: Smart Grid Requirement",
+      "description": "Review this smart grid power management requirement and fix the issues.",
+      "context": "Smart electrical grid management system"
+    },
+    "correctPattern": "unwanted",
+    "mode": "inspector",
+    "brokenRequirement": {
+      "text": "WHEN power consumption exceeds grid capacity, the grid SHALL reduce power quickly to prevent blackouts using load shedding algorithms.",
+      "issues": [
+        {
+          "id": "issue1",
+          "brokenText": "WHEN",
+          "fixText": "IF",
+          "reason": "Exceeding grid capacity is an unwanted/fault condition. Use IF/THEN for error handling."
+        },
+        {
+          "id": "issue2",
+          "brokenText": "the grid",
+          "fixText": "the power management system",
+          "reason": "'The grid' is infrastructure, not a system. Specify the controlling system component."
+        },
+        {
+          "id": "issue3",
+          "brokenText": "reduce power quickly to prevent blackouts using load shedding algorithms",
+          "fixText": "initiate load shedding on non-critical circuits",
+          "reason": "Three problems: 'quickly' is non-functional, 'prevent blackouts' is a goal not an action, 'using load shedding algorithms' specifies implementation."
+        }
+      ]
+    },
+    "componentBank": [
+      { "id": "fix1", "text": "IF", "category": "keyword", "isTrap": false },
+      { "id": "fix2", "text": "the power management system", "category": "system", "isTrap": false },
+      { "id": "fix3", "text": "initiate load shedding on non-critical circuits", "category": "action", "isTrap": false },
+      { "id": "trap1", "text": "WHILE", "category": "keyword", "isTrap": true, "reason": "Exceeding capacity is a fault condition, not a normal operational state" },
+      { "id": "trap2", "text": "the electrical grid", "category": "system", "isTrap": true, "reason": "Still naming infrastructure rather than the managing system" },
+      { "id": "trap3", "text": "prevent blackouts efficiently", "category": "action", "isTrap": true, "reason": "Still a goal with a non-functional qualifier, not a testable action" }
+    ],
+    "explanation": "Three issues: (1) WHEN should be IF - exceeding capacity is a fault condition. (2) 'The grid' should be 'the power management system' - specify the controlling system. (3) The action mixed non-functional ('quickly'), goals ('prevent blackouts'), and implementation ('load shedding algorithms')."
+  }
+]
