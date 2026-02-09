@@ -1,0 +1,1054 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navigation */
+.game-nav {
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+}
+
+.game-nav a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.game-nav a:hover {
+    color: white;
+}
+
+.game-nav a.active {
+    color: white;
+    border-bottom: 2px solid white;
+    padding-bottom: 2px;
+}
+
+.nav-divider {
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0 15px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+/* Game Info Bar */
+.game-info {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.score-panel {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.score-item {
+    font-size: 1.2rem;
+}
+
+.score-item .label {
+    color: #666;
+    font-weight: 500;
+}
+
+.score-item .value {
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.difficulty-badge {
+    font-size: 1rem !important;
+    padding: 2px 10px;
+    border-radius: 4px;
+    background: #e8f5e9;
+    color: #2e7d32 !important;
+}
+
+/* Game Container */
+#game-container {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.challenge-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.challenge-header h2 {
+    color: #667eea;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.challenge-desc {
+    color: #666;
+    font-size: 1.05rem;
+}
+
+/* Game Layout - Two panels */
+.game-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.mockup-panel h3,
+.components-panel h3 {
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.instruction {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+/* Mockup Wrapper */
+.mockup-wrapper {
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+/* ========================================
+   APP MOCKUPS
+   ======================================== */
+
+/* Common mockup styles */
+.app-mockup {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14px;
+    position: relative;
+}
+
+/* Drop Zones */
+.drop-zone {
+    position: relative;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    min-height: 30px;
+}
+
+.drop-zone::before {
+    content: attr(data-zone-num);
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    background: #667eea;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    z-index: 10;
+    line-height: 22px;
+    text-align: center;
+}
+
+.drop-zone:hover {
+    outline: 2px dashed #667eea;
+    outline-offset: -2px;
+    background-color: rgba(102, 126, 234, 0.05);
+}
+
+.drop-zone.active {
+    outline: 3px solid #667eea;
+    outline-offset: -3px;
+    background-color: rgba(102, 126, 234, 0.1);
+}
+
+.drop-zone.drag-over {
+    outline: 3px dashed #4caf50;
+    outline-offset: -3px;
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+.drop-zone.assigned {
+    outline: 2px solid #4caf50;
+    outline-offset: -2px;
+}
+
+.drop-zone.correct {
+    outline: 3px solid #4caf50;
+    outline-offset: -3px;
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+.drop-zone.incorrect {
+    outline: 3px solid #f44336;
+    outline-offset: -3px;
+    background-color: rgba(244, 67, 54, 0.1);
+}
+
+.zone-label {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background: #4caf50;
+    color: white;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    z-index: 10;
+    max-width: calc(100% - 30px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ---- Instagram Post Mockup ---- */
+.mockup-instagram {
+    background: white;
+    max-width: 100%;
+}
+
+.mockup-instagram .ig-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    border-bottom: 1px solid #efefef;
+    gap: 10px;
+}
+
+.mockup-instagram .ig-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.mockup-instagram .ig-username {
+    font-weight: 600;
+    font-size: 14px;
+    color: #262626;
+}
+
+.mockup-instagram .ig-photo {
+    width: 100%;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #a8d8ea, #aa96da, #fcbad3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 40px;
+}
+
+.mockup-instagram .ig-actions {
+    display: flex;
+    padding: 10px 12px;
+    gap: 16px;
+    font-size: 22px;
+}
+
+.mockup-instagram .ig-actions span {
+    cursor: default;
+}
+
+.mockup-instagram .ig-likes {
+    padding: 0 12px 6px;
+    font-weight: 600;
+    font-size: 13px;
+    color: #262626;
+}
+
+.mockup-instagram .ig-comments {
+    padding: 4px 12px 8px;
+    border-top: 1px solid #efefef;
+}
+
+.mockup-instagram .ig-comment {
+    font-size: 13px;
+    color: #262626;
+    margin-bottom: 3px;
+}
+
+.mockup-instagram .ig-comment strong {
+    font-weight: 600;
+}
+
+.mockup-instagram .ig-comment-more {
+    color: #8e8e8e;
+    font-size: 13px;
+}
+
+.mockup-instagram .ig-timestamp {
+    padding: 4px 12px 12px;
+    font-size: 11px;
+    color: #8e8e8e;
+    text-transform: uppercase;
+}
+
+/* ---- Twitter/X Tweet Mockup ---- */
+.mockup-tweet {
+    background: white;
+    padding: 12px 16px;
+}
+
+.mockup-tweet .tweet-header {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.mockup-tweet .tweet-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #1da1f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.mockup-tweet .tweet-content {
+    flex: 1;
+}
+
+.mockup-tweet .tweet-name-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 2px;
+}
+
+.mockup-tweet .tweet-display-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: #0f1419;
+}
+
+.mockup-tweet .tweet-handle {
+    color: #536471;
+    font-size: 14px;
+}
+
+.mockup-tweet .tweet-text {
+    font-size: 15px;
+    line-height: 1.4;
+    color: #0f1419;
+    margin: 8px 0 12px;
+}
+
+.mockup-tweet .tweet-actions {
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+    color: #536471;
+    font-size: 13px;
+}
+
+.mockup-tweet .tweet-action {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.mockup-tweet .tweet-like-count {
+    padding-top: 10px;
+    border-top: 1px solid #eff3f4;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #536471;
+}
+
+.mockup-tweet .tweet-like-count strong {
+    color: #0f1419;
+    font-weight: 700;
+}
+
+/* ---- Weather App Mockup ---- */
+.mockup-weather {
+    background: linear-gradient(180deg, #4a90d9, #74b9ff);
+    color: white;
+    padding: 24px 20px;
+    text-align: center;
+}
+
+.mockup-weather .weather-city {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 4px;
+}
+
+.mockup-weather .weather-temp {
+    font-size: 56px;
+    font-weight: 200;
+    margin: 8px 0;
+}
+
+.mockup-weather .weather-icon {
+    font-size: 48px;
+    margin: 8px 0;
+}
+
+.mockup-weather .weather-desc {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.mockup-weather .weather-forecast {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 16px;
+    margin-top: 8px;
+}
+
+.mockup-weather .forecast-day {
+    text-align: center;
+    font-size: 12px;
+}
+
+.mockup-weather .forecast-day .day-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.mockup-weather .forecast-day .day-icon {
+    font-size: 20px;
+    margin: 4px 0;
+}
+
+.mockup-weather .forecast-day .day-temp {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.mockup-weather .weather-updated {
+    margin-top: 16px;
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+/* ---- Chat App Mockup ---- */
+.mockup-chat {
+    background: #ece5dd;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+}
+
+.mockup-chat .chat-header {
+    background: #075e54;
+    color: white;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mockup-chat .chat-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #25d366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.mockup-chat .chat-contact-name {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.mockup-chat .chat-messages {
+    flex: 1;
+    padding: 12px 14px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.mockup-chat .chat-bubble {
+    max-width: 75%;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.4;
+    position: relative;
+}
+
+.mockup-chat .chat-bubble.received {
+    background: white;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+}
+
+.mockup-chat .chat-bubble.sent {
+    background: #dcf8c6;
+    align-self: flex-end;
+    border-top-right-radius: 0;
+}
+
+.mockup-chat .bubble-time {
+    font-size: 10px;
+    color: #999;
+    text-align: right;
+    margin-top: 2px;
+}
+
+.mockup-chat .chat-input-bar {
+    display: flex;
+    padding: 8px 10px;
+    gap: 8px;
+    background: #f0f0f0;
+    align-items: center;
+}
+
+.mockup-chat .chat-input {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background: white;
+    font-size: 13px;
+    color: #999;
+}
+
+.mockup-chat .chat-send-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #075e54;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+/* ---- E-commerce Product Card Mockup ---- */
+.mockup-ecommerce {
+    background: white;
+    padding: 0;
+}
+
+.mockup-ecommerce .product-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.mockup-ecommerce .product-info {
+    padding: 16px 20px 20px;
+}
+
+.mockup-ecommerce .product-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f1419;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.mockup-ecommerce .product-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #b12704;
+    margin-bottom: 8px;
+}
+
+.mockup-ecommerce .product-price .original-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+    font-weight: 400;
+    margin-left: 8px;
+}
+
+.mockup-ecommerce .product-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.mockup-ecommerce .stars {
+    color: #ffa41c;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.mockup-ecommerce .review-count {
+    color: #007185;
+    font-size: 13px;
+}
+
+.mockup-ecommerce .add-to-cart {
+    width: 100%;
+    padding: 10px 20px;
+    background: #ffd814;
+    border: 1px solid #fcd200;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f1111;
+    cursor: default;
+    text-align: center;
+}
+
+/* ========================================
+   COMPONENT PALETTE
+   ======================================== */
+
+.components-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.component-label {
+    padding: 8px 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: grab;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.component-label:hover {
+    border-color: #667eea;
+    box-shadow: 0 2px 6px rgba(102, 126, 234, 0.2);
+    transform: translateY(-1px);
+}
+
+.component-label.selected {
+    border-color: #667eea;
+    background: #f0f4ff;
+    box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
+}
+
+.component-label.dragging {
+    opacity: 0.5;
+}
+
+.component-label[data-type="Image component"] { border-left: 4px solid #9c27b0; }
+.component-label[data-type="Text label"] { border-left: 4px solid #2196f3; }
+.component-label[data-type="Icon button"] { border-left: 4px solid #ff9800; }
+.component-label[data-type="Repeating group"] { border-left: 4px solid #4caf50; }
+.component-label[data-type="Text with formula"] { border-left: 4px solid #e91e63; }
+.component-label[data-type="Input field"] { border-left: 4px solid #00bcd4; }
+.component-label[data-type="Action button"] { border-left: 4px solid #ff5722; }
+.component-label[data-type="Rating component"] { border-left: 4px solid #ffc107; }
+.component-label[data-type="Video player"] { border-left: 4px solid #607d8b; }
+.component-label[data-type="Search bar"] { border-left: 4px solid #607d8b; }
+.component-label[data-type="Navigation menu"] { border-left: 4px solid #607d8b; }
+.component-label[data-type="Audio player"] { border-left: 4px solid #607d8b; }
+.component-label[data-type="Dropdown menu"] { border-left: 4px solid #607d8b; }
+.component-label[data-type="Checkbox"] { border-left: 4px solid #607d8b; }
+.component-label[data-type="Toggle switch"] { border-left: 4px solid #607d8b; }
+
+/* ========================================
+   ASSIGNMENTS LIST
+   ======================================== */
+
+.assignments-section {
+    margin-top: 20px;
+}
+
+.assignments-section h3 {
+    color: #667eea;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.assignments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.assignment-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+.assignment-zone-num {
+    width: 22px;
+    height: 22px;
+    background: #667eea;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.assignment-zone-label {
+    color: #666;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.assignment-arrow {
+    color: #bbb;
+    flex-shrink: 0;
+}
+
+.assignment-value {
+    font-weight: 600;
+    color: #333;
+    flex-shrink: 0;
+}
+
+.assignment-value.empty {
+    color: #ccc;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.assignment-clear {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0 2px;
+    flex-shrink: 0;
+}
+
+.assignment-clear:hover {
+    color: #f44336;
+}
+
+.assignment-row.correct {
+    background: #e8f5e9;
+    border-left: 3px solid #4caf50;
+}
+
+.assignment-row.incorrect {
+    background: #ffebee;
+    border-left: 3px solid #f44336;
+}
+
+/* ========================================
+   BUTTONS & ACTIONS
+   ======================================== */
+
+.actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ========================================
+   FEEDBACK & EXPLANATION
+   ======================================== */
+
+.feedback {
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.feedback.success {
+    background: #d4edda;
+    color: #155724;
+    border: 2px solid #c3e6cb;
+}
+
+.feedback.partial {
+    background: #fff3cd;
+    color: #856404;
+    border: 2px solid #ffeeba;
+}
+
+.feedback.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+}
+
+.explanation {
+    background: #e7f3ff;
+    border: 2px solid #2196f3;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.explanation h3 {
+    color: #1976d2;
+    margin-bottom: 10px;
+}
+
+.explanation p {
+    line-height: 1.6;
+    color: #333;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.navigation {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* ========================================
+   GAME COMPLETE
+   ======================================== */
+
+.game-complete {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-complete h2 {
+    font-size: 2.5rem;
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+.final-score {
+    margin: 30px 0;
+    padding: 20px;
+    background: #f0f4ff;
+    border-radius: 8px;
+}
+
+.final-score h3 {
+    font-size: 2rem;
+    color: #667eea;
+}
+
+.skills-learned {
+    margin: 30px 0;
+}
+
+.skills-learned h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.components-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.component-chip {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+}
+
+/* ========================================
+   FOOTER / LEGEND
+   ======================================== */
+
+footer {
+    margin-top: 30px;
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+}
+
+.badge {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    white-space: nowrap;
+}
+
+.badge.comp-image { background: #9c27b0; }
+.badge.comp-text { background: #2196f3; }
+.badge.comp-icon-btn { background: #ff9800; }
+.badge.comp-repeating { background: #4caf50; }
+.badge.comp-formula { background: #e91e63; }
+.badge.comp-input { background: #00bcd4; }
+.badge.comp-action-btn { background: #ff5722; }
+.badge.comp-rating { background: #ffc107; }
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 900px) {
+    .game-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .score-panel {
+        gap: 20px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .mockup-chat {
+        height: 320px;
+    }
+}

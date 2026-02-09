@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "appName": "Instagram Post",
+    "difficulty": "Beginner",
+    "description": "Identify the UI components in a typical Instagram post",
+    "zones": [
+      { "id": "zone-1", "label": "Profile Picture", "correctComponent": "Image component" },
+      { "id": "zone-2", "label": "Username", "correctComponent": "Text label" },
+      { "id": "zone-3", "label": "Post Photo", "correctComponent": "Image component" },
+      { "id": "zone-4", "label": "Like Button", "correctComponent": "Icon button" },
+      { "id": "zone-5", "label": "Comment Section", "correctComponent": "Repeating group" },
+      { "id": "zone-6", "label": "Timestamp", "correctComponent": "Text with formula" }
+    ],
+    "availableComponents": [
+      "Image component",
+      "Text label",
+      "Icon button",
+      "Repeating group",
+      "Text with formula",
+      "Video player",
+      "Search bar",
+      "Navigation menu"
+    ],
+    "explanation": "An Instagram post combines several component types: <strong>Image components</strong> for both the profile picture and main photo, a <strong>Text label</strong> for the username, <strong>Icon buttons</strong> for interactive actions (like, comment, share), a <strong>Repeating group</strong> for the comments section (a dynamic list of similar items), and <strong>Text with formula</strong> for the relative timestamp (e.g., '2 hours ago' calculated from post time)."
+  },
+  {
+    "id": 2,
+    "appName": "Twitter / X Tweet",
+    "difficulty": "Beginner",
+    "description": "Break down the components of a tweet",
+    "zones": [
+      { "id": "zone-1", "label": "User Avatar", "correctComponent": "Image component" },
+      { "id": "zone-2", "label": "Display Name", "correctComponent": "Text label" },
+      { "id": "zone-3", "label": "Handle (@user)", "correctComponent": "Text label" },
+      { "id": "zone-4", "label": "Tweet Text", "correctComponent": "Text label" },
+      { "id": "zone-5", "label": "Action Buttons (Reply, Retweet, Like)", "correctComponent": "Icon button" },
+      { "id": "zone-6", "label": "Like Count", "correctComponent": "Text with formula" }
+    ],
+    "availableComponents": [
+      "Image component",
+      "Text label",
+      "Icon button",
+      "Text with formula",
+      "Repeating group",
+      "Audio player",
+      "Dropdown menu",
+      "Checkbox"
+    ],
+    "explanation": "A tweet uses an <strong>Image component</strong> for the avatar, multiple <strong>Text labels</strong> for the display name, handle, and tweet body, <strong>Icon buttons</strong> for the reply/retweet/like actions, and <strong>Text with formula</strong> for computed values like the like count (which updates dynamically). Note how one component type (Text label) can appear multiple times with different content."
+  },
+  {
+    "id": 3,
+    "appName": "Weather App",
+    "difficulty": "Intermediate",
+    "description": "Analyze the components of a weather forecast widget",
+    "zones": [
+      { "id": "zone-1", "label": "City Name", "correctComponent": "Text label" },
+      { "id": "zone-2", "label": "Temperature Display", "correctComponent": "Text with formula" },
+      { "id": "zone-3", "label": "Weather Icon", "correctComponent": "Image component" },
+      { "id": "zone-4", "label": "5-Day Forecast Row", "correctComponent": "Repeating group" },
+      { "id": "zone-5", "label": "Last Updated Time", "correctComponent": "Text with formula" }
+    ],
+    "availableComponents": [
+      "Image component",
+      "Text label",
+      "Text with formula",
+      "Repeating group",
+      "Action button",
+      "Video player",
+      "Input field",
+      "Toggle switch"
+    ],
+    "explanation": "A weather app widget uses a <strong>Text label</strong> for the city name (static display), <strong>Text with formula</strong> for the temperature (computed from API data and unit conversion) and last updated time, an <strong>Image component</strong> for the weather condition icon, and a <strong>Repeating group</strong> for the forecast row (each day repeats the same structure: day, icon, temperature)."
+  },
+  {
+    "id": 4,
+    "appName": "Chat App (WhatsApp)",
+    "difficulty": "Intermediate",
+    "description": "Identify components in a chat messaging interface",
+    "zones": [
+      { "id": "zone-1", "label": "Contact Avatar", "correctComponent": "Image component" },
+      { "id": "zone-2", "label": "Contact Name", "correctComponent": "Text label" },
+      { "id": "zone-3", "label": "Message List", "correctComponent": "Repeating group" },
+      { "id": "zone-4", "label": "Text Input Box", "correctComponent": "Input field" },
+      { "id": "zone-5", "label": "Send Button", "correctComponent": "Icon button" },
+      { "id": "zone-6", "label": "Message Timestamp", "correctComponent": "Text with formula" }
+    ],
+    "availableComponents": [
+      "Image component",
+      "Text label",
+      "Icon button",
+      "Repeating group",
+      "Text with formula",
+      "Input field",
+      "Video player",
+      "Rating component",
+      "Navigation menu"
+    ],
+    "explanation": "A chat interface uses an <strong>Image component</strong> for the contact avatar, a <strong>Text label</strong> for the contact name, a <strong>Repeating group</strong> for the message list (each message is a repeated item with the same structure), an <strong>Input field</strong> for typing messages, an <strong>Icon button</strong> for sending, and <strong>Text with formula</strong> for timestamps (formatted relative to current time)."
+  },
+  {
+    "id": 5,
+    "appName": "E-commerce Product Card",
+    "difficulty": "Advanced",
+    "description": "Break down a product listing card from an online store",
+    "zones": [
+      { "id": "zone-1", "label": "Product Image", "correctComponent": "Image component" },
+      { "id": "zone-2", "label": "Product Name", "correctComponent": "Text label" },
+      { "id": "zone-3", "label": "Price", "correctComponent": "Text with formula" },
+      { "id": "zone-4", "label": "Star Rating", "correctComponent": "Rating component" },
+      { "id": "zone-5", "label": "Add to Cart Button", "correctComponent": "Action button" },
+      { "id": "zone-6", "label": "Reviews Count", "correctComponent": "Text with formula" }
+    ],
+    "availableComponents": [
+      "Image component",
+      "Text label",
+      "Text with formula",
+      "Rating component",
+      "Action button",
+      "Icon button",
+      "Repeating group",
+      "Search bar",
+      "Dropdown menu"
+    ],
+    "explanation": "An e-commerce product card uses an <strong>Image component</strong> for the product photo, a <strong>Text label</strong> for the product name, <strong>Text with formula</strong> for both the price (formatted with currency symbol, possibly computed with discounts) and reviews count, a <strong>Rating component</strong> for the star display (a specialized component that converts a numeric score to visual stars), and an <strong>Action button</strong> for 'Add to Cart' (a button with text, distinct from an icon-only button)."
+  }
+]
