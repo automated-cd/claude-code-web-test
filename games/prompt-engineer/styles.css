@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 860px;
     margin: 0 auto;
 }
 
@@ -54,72 +54,84 @@ body {
 header {
     text-align: center;
     color: white;
-    margin-bottom: 30px;
-    padding: 20px;
+    margin-bottom: 20px;
+    padding: 16px 20px;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
     background: linear-gradient(135deg, #a78bfa, #06b6d4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-weight: 700;
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .game-info {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 14px 20px;
     margin-bottom: 20px;
 }
 
 .score-panel {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 32px;
     flex-wrap: wrap;
 }
 
 .score-item {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
 }
 
 .score-item .label {
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.35);
     font-weight: 500;
 }
 
 .score-item .value {
     color: #a78bfa;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.15rem;
 }
 
 #game-container {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 16px;
-    padding: 30px;
+    padding: 36px 40px;
 }
 
 .prompt-section,
 .target-section,
 .cards-section,
 .selected-section {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.selected-section {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 h2 {
-    color: #a78bfa;
-    margin-bottom: 15px;
-    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 .prompt-box,
@@ -127,10 +139,10 @@ h2 {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
-    padding: 20px;
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
+    padding: 20px 24px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .target-box {
@@ -139,29 +151,29 @@ h2 {
 }
 
 .hint {
-    margin-top: 10px;
-    color: rgba(255, 255, 255, 0.4);
+    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.3);
     font-style: italic;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
 }
 
 .instruction {
-    color: rgba(255, 255, 255, 0.4);
-    margin-bottom: 15px;
-    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin-bottom: 16px;
+    font-size: 0.85rem;
 }
 
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
 }
 
 .card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
-    padding: 15px;
+    padding: 18px 20px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
@@ -195,18 +207,20 @@ h2 {
 }
 
 .card-text {
-    font-size: 1rem;
-    margin-bottom: 8px;
-    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.92rem;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.5;
 }
 
 .card-technique {
     display: inline-block;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .selected-cards-container {
@@ -412,9 +426,13 @@ footer {
 }
 
 footer h3 {
-    color: #a78bfa;
-    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 14px;
     text-align: center;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .technique-legend {
@@ -457,7 +475,11 @@ footer h3 {
 
 @media (max-width: 768px) {
     header h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+    }
+
+    #game-container {
+        padding: 24px 20px;
     }
 
     .cards-grid {

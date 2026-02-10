@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 860px;
     margin: 0 auto;
 }
 
@@ -55,53 +55,54 @@ body {
 header {
     text-align: center;
     color: white;
-    margin-bottom: 30px;
-    padding: 20px;
+    margin-bottom: 20px;
+    padding: 16px 20px;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
     background: linear-gradient(135deg, #a78bfa, #06b6d4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-weight: 700;
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.4);
 }
 
 /* Game Info Bar */
 .game-info {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 14px 20px;
     margin-bottom: 20px;
 }
 
 .score-panel {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 28px;
     flex-wrap: wrap;
 }
 
 .score-item {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
 }
 
 .score-item .label {
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.35);
     font-weight: 500;
 }
 
 .score-item .value {
     color: #a78bfa;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.15rem;
 }
 
 /* Difficulty Badge */
@@ -165,7 +166,7 @@ header h1 {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 16px;
-    padding: 30px;
+    padding: 32px 36px;
     margin-bottom: 20px;
 }
 
@@ -181,21 +182,22 @@ header h1 {
 }
 
 .scenario-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #ffffff;
     margin-bottom: 8px;
+    font-weight: 600;
 }
 
 .scenario-card .scenario-description {
-    font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
+    font-size: 0.93rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
     margin-bottom: 8px;
 }
 
 .scenario-card .scenario-context {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.35);
     font-style: italic;
 }
 
@@ -257,9 +259,12 @@ header h1 {
 }
 
 .pattern-selection h3 {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
     margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .pattern-options {
@@ -334,9 +339,12 @@ header h1 {
 }
 
 .drop-zones-section h3 {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
     margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .requirement-builder {
@@ -441,9 +449,12 @@ header h1 {
 }
 
 .component-bank h3 {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
     margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .component-bank-grid {
@@ -856,7 +867,11 @@ header h1 {
 .patterns-mastered h3 {
     text-align: center;
     margin-bottom: 16px;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .pattern-mastery-item {
@@ -890,8 +905,12 @@ footer {
 
 .pattern-legend h3 {
     text-align: center;
-    margin-bottom: 16px;
-    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 14px;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .legend-grid {
