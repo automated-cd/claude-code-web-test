@@ -28,6 +28,9 @@ const gameCompleteEl = document.getElementById('game-complete');
 const finalScoreEl = document.getElementById('final-score');
 const componentsLearnedEl = document.getElementById('components-learned');
 const restartBtn = document.getElementById('restart-btn');
+const rulesBtn = document.getElementById('rules-btn');
+const rulesModal = document.getElementById('rules-modal');
+const closeModalBtn = document.getElementById('close-modal');
 
 // Component colors for chips
 const componentColors = {
@@ -678,6 +681,34 @@ document.addEventListener('click', function (e) {
     if (!e.target.closest('.drop-zone') && !e.target.closest('.component-label')) {
         clearPaletteSelection();
         clearActiveZones();
+    }
+});
+
+// Modal functions
+function openRulesModal() {
+    rulesModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeRulesModal() {
+    rulesModal.classList.add('hidden');
+    document.body.style.overflow = '';
+}
+
+rulesBtn.addEventListener('click', openRulesModal);
+closeModalBtn.addEventListener('click', closeRulesModal);
+
+// Close modal when clicking outside
+rulesModal.addEventListener('click', (e) => {
+    if (e.target === rulesModal) {
+        closeRulesModal();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !rulesModal.classList.contains('hidden')) {
+        closeRulesModal();
     }
 });
 

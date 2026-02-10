@@ -26,6 +26,9 @@ const gameCompleteEl = document.getElementById('game-complete');
 const finalScoreEl = document.getElementById('final-score');
 const techniquesListEl = document.getElementById('techniques-list');
 const restartBtn = document.getElementById('restart-btn');
+const rulesBtn = document.getElementById('rules-btn');
+const rulesModal = document.getElementById('rules-modal');
+const closeModalBtn = document.getElementById('close-modal');
 
 // Technique colors mapping
 const techniqueColors = {
@@ -330,11 +333,38 @@ function restartGame() {
     loadLevel();
 }
 
+// Modal functions
+function openRulesModal() {
+    rulesModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeRulesModal() {
+    rulesModal.classList.add('hidden');
+    document.body.style.overflow = '';
+}
+
 // Event listeners
 submitBtn.addEventListener('click', submitAnswer);
 hintBtn.addEventListener('click', showHint);
 nextBtn.addEventListener('click', nextLevel);
 restartBtn.addEventListener('click', restartGame);
+rulesBtn.addEventListener('click', openRulesModal);
+closeModalBtn.addEventListener('click', closeRulesModal);
+
+// Close modal when clicking outside
+rulesModal.addEventListener('click', (e) => {
+    if (e.target === rulesModal) {
+        closeRulesModal();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !rulesModal.classList.contains('hidden')) {
+        closeRulesModal();
+    }
+});
 
 // Start game
 initGame();

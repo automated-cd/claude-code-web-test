@@ -48,6 +48,9 @@ const finalScoreEl = document.getElementById('final-score');
 const finalStarsEl = document.getElementById('final-stars');
 const patternsMastered = document.getElementById('patterns-mastered');
 const restartBtn = document.getElementById('restart-btn');
+const rulesBtn = document.getElementById('rules-btn');
+const rulesModal = document.getElementById('rules-modal');
+const closeModalBtn = document.getElementById('close-modal');
 
 const patternNames = {
     'ubiquitous': 'Ubiquitous',
@@ -851,6 +854,34 @@ function restartGame() {
     gameContainer.classList.remove('hidden');
     loadLevel();
 }
+
+// Modal functions
+function openRulesModal() {
+    rulesModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeRulesModal() {
+    rulesModal.classList.add('hidden');
+    document.body.style.overflow = '';
+}
+
+rulesBtn.addEventListener('click', openRulesModal);
+closeModalBtn.addEventListener('click', closeRulesModal);
+
+// Close modal when clicking outside
+rulesModal.addEventListener('click', (e) => {
+    if (e.target === rulesModal) {
+        closeRulesModal();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !rulesModal.classList.contains('hidden')) {
+        closeRulesModal();
+    }
+});
 
 // Initialize
 initGame();

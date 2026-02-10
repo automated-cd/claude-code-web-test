@@ -19,6 +19,14 @@
         <header>
             <h1>🎯 The Prompt Engineer's Toolkit</h1>
             <p class="subtitle">Master the art of crafting effective prompts by combining the right techniques</p>
+            <button id="rules-btn" class="rules-btn" aria-label="Show Rules">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                Rules
+            </button>
         </header>
 
         <div class="game-info">
@@ -100,6 +108,44 @@
                 </div>
             </div>
         </footer>
+    </div>
+
+    <!-- Rules Modal -->
+    <div id="rules-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>How to Play</h2>
+                <button id="close-modal" class="close-btn" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>Objective</h3>
+                <p>Transform base prompts into effective, structured prompts by selecting the right prompt engineering techniques.</p>
+
+                <h3>How It Works</h3>
+                <ol>
+                    <li><strong>Read the Base Prompt:</strong> This is your starting point.</li>
+                    <li><strong>Review the Target Structure:</strong> See what the improved prompt should include.</li>
+                    <li><strong>Select Technique Cards:</strong> Click on cards that represent the techniques needed to transform the base prompt into the target.</li>
+                    <li><strong>Watch Out for Traps:</strong> Some cards look helpful but aren't needed. Selecting them costs points!</li>
+                    <li><strong>Submit:</strong> Once you've selected all the right cards, submit your answer.</li>
+                </ol>
+
+                <h3>Scoring</h3>
+                <ul>
+                    <li>+10 points for each correct technique</li>
+                    <li>-5 points for selecting trap cards</li>
+                    <li>-2 points for missing required techniques</li>
+                </ul>
+
+                <h3>Tips</h3>
+                <ul>
+                    <li>Read the target prompt carefully to identify what's being added</li>
+                    <li>Use the hint button if you're stuck (no penalty!)</li>
+                    <li>Look for keywords that match technique definitions</li>
+                    <li>Check the technique legend at the bottom for reference</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <script src="game.js"></script>

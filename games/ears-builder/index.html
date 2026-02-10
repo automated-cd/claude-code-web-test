@@ -19,6 +19,14 @@
         <header>
             <h1>EARS Requirements Builder</h1>
             <p class="subtitle">Master the EARS notation by assembling proper requirements from component pieces</p>
+            <button id="rules-btn" class="rules-btn" aria-label="Show Rules">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                Rules
+            </button>
         </header>
 
         <div class="game-info">
@@ -139,6 +147,62 @@
                 </div>
             </div>
         </footer>
+    </div>
+
+    <!-- Rules Modal -->
+    <div id="rules-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>How to Play</h2>
+                <button id="close-modal" class="close-btn" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>Objective</h3>
+                <p>Master the EARS (Easy Approach to Requirements Syntax) notation by building well-structured requirements from component pieces.</p>
+
+                <h3>What is EARS?</h3>
+                <p>EARS is a structured approach to writing requirements using five patterns:</p>
+                <ul>
+                    <li><strong>Ubiquitous:</strong> The [system] shall [action]</li>
+                    <li><strong>Event-Driven:</strong> WHEN [trigger], the [system] shall [action]</li>
+                    <li><strong>Unwanted:</strong> IF [condition], THEN the [system] shall [action]</li>
+                    <li><strong>State-Driven:</strong> WHILE [state], the [system] shall [action]</li>
+                    <li><strong>Optional:</strong> WHERE [feature], the [system] shall [action]</li>
+                </ul>
+
+                <h3>How It Works</h3>
+                <ol>
+                    <li><strong>Read the Scenario:</strong> Understand what the requirement needs to describe.</li>
+                    <li><strong>Select the Pattern:</strong> Choose the EARS pattern that best fits the scenario.</li>
+                    <li><strong>Build the Requirement:</strong> Drag component pieces into the drop zones to build a complete requirement following the selected pattern.</li>
+                    <li><strong>Use Hints:</strong> Stuck? Use the hint button (you have 3 hints per level).</li>
+                    <li><strong>Submit:</strong> Once all components are placed, submit your requirement.</li>
+                </ol>
+
+                <h3>Game Modes</h3>
+                <ul>
+                    <li><strong>Guided Mode (Beginner):</strong> Pattern is selected for you, focus on assembling components</li>
+                    <li><strong>Inspector Mode (Intermediate):</strong> Fix errors in broken requirements</li>
+                    <li><strong>Architect Mode (Advanced):</strong> Select pattern and build from scratch</li>
+                </ul>
+
+                <h3>Scoring & Stars</h3>
+                <ul>
+                    <li>Perfect answer: +100 points & 3 stars ⭐⭐⭐</li>
+                    <li>Good answer: +50 points & 2 stars ⭐⭐</li>
+                    <li>Acceptable answer: +25 points & 1 star ⭐</li>
+                    <li>Each hint used: -5 points</li>
+                </ul>
+
+                <h3>Tips</h3>
+                <ul>
+                    <li>Pay attention to trigger words like "when," "while," "if" to identify the pattern</li>
+                    <li>System name and action are core to all patterns</li>
+                    <li>Use the pattern reference at the bottom for quick lookup</li>
+                    <li>Reset button clears your current work if you need to start over</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <script src="game.js"></script>
