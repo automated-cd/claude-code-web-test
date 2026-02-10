@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EARS Requirements Builder - Assembly Line Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="game-nav">
+            <a href="../prompt-engineer/index.html">Prompt Engineer's Toolkit</a>
+            <span class="nav-divider">|</span>
+            <a href="../clone-this-app/index.html">Clone This App</a>
+            <span class="nav-divider">|</span>
+            <a href="../ears-builder/index.html" class="active">EARS Requirements Builder</a>
+        </nav>
+
+        <header>
+            <h1>EARS Requirements Builder</h1>
+            <p class="subtitle">Master the EARS notation by assembling proper requirements from component pieces</p>
+        </header>
+
+        <div class="game-info">
+            <div class="score-panel">
+                <div class="score-item">
+                    <span class="label">Level:</span>
+                    <span id="current-level" class="value">1</span>
+                    <span class="label">/ <span id="total-levels">20</span></span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Score:</span>
+                    <span id="score" class="value">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Difficulty:</span>
+                    <span id="difficulty" class="value difficulty-badge beginner">Beginner</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Mode:</span>
+                    <span id="mode" class="value mode-badge guided">Guided</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Stars:</span>
+                    <span id="stars" class="stars-display"></span>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div id="game-container">
+            <!-- Scenario Card -->
+            <div id="scenario-card" class="scenario-card">
+                <h3 id="scenario-title"></h3>
+                <p id="scenario-description" class="scenario-description"></p>
+                <p id="scenario-context" class="scenario-context"></p>
+            </div>
+
+            <!-- Broken Requirement (Inspector Mode) -->
+            <div id="broken-requirement" class="broken-requirement hidden">
+                <span class="broken-label">Current Requirement (contains errors)</span>
+                <span id="broken-text"></span>
+            </div>
+
+            <!-- Issues List (Inspector Mode) -->
+            <div id="issues-list" class="issues-list hidden">
+                <h4>Issues to Fix:</h4>
+                <ul id="issues-items"></ul>
+            </div>
+
+            <!-- Pattern Selection -->
+            <div id="pattern-selection" class="pattern-selection">
+                <h3>Step 1: Select the EARS Pattern</h3>
+                <div id="pattern-options" class="pattern-options"></div>
+            </div>
+
+            <!-- Template Display -->
+            <div id="template-display" class="template-display hidden"></div>
+
+            <!-- Drop Zones / Requirement Builder -->
+            <div id="drop-zones-section" class="drop-zones-section hidden">
+                <h3 id="builder-title">Step 2: Build the Requirement</h3>
+                <div id="requirement-builder" class="requirement-builder"></div>
+            </div>
+
+            <!-- Component Bank -->
+            <div id="component-bank" class="component-bank hidden">
+                <h3>Component Bank</h3>
+                <div id="component-bank-grid" class="component-bank-grid"></div>
+            </div>
+
+            <!-- Actions -->
+            <div class="actions">
+                <button id="submit-btn" class="btn btn-primary" disabled>Submit Answer</button>
+                <button id="hint-btn" class="btn btn-secondary">Hint <span class="hints-remaining">(3)</span></button>
+                <button id="reset-btn" class="btn btn-secondary">Reset</button>
+            </div>
+
+            <!-- Feedback -->
+            <div id="feedback" class="feedback hidden"></div>
+
+            <!-- Explanation -->
+            <div id="explanation" class="explanation hidden"></div>
+
+            <!-- Constructed Requirement -->
+            <div id="constructed-req" class="constructed-requirement hidden"></div>
+
+            <!-- Navigation -->
+            <div class="navigation hidden" id="navigation">
+                <button id="next-btn" class="btn btn-primary">Next Level</button>
+            </div>
+        </div>
+
+        <!-- Game Complete -->
+        <div id="game-complete" class="game-complete hidden">
+            <h2>Requirements Assembly Complete!</h2>
+            <p>You've mastered all 20 levels of EARS requirements building!</p>
+            <div class="final-score">
+                <h3>Final Score: <span id="final-score">0</span></h3>
+                <div id="final-stars" class="final-stars"></div>
+            </div>
+            <div id="patterns-mastered" class="patterns-mastered">
+                <h3>Patterns Mastered</h3>
+            </div>
+            <button id="restart-btn" class="btn btn-primary">Play Again</button>
+        </div>
+
+        <footer>
+            <div class="pattern-legend">
+                <h3>EARS Pattern Reference</h3>
+                <div class="legend-grid">
+                    <span class="legend-item"><span class="badge pattern-ubiquitous">Ubiquitous</span> The [system] shall [action]</span>
+                    <span class="legend-item"><span class="badge pattern-event">Event-Driven</span> WHEN [trigger], the [system] shall [action]</span>
+                    <span class="legend-item"><span class="badge pattern-unwanted">Unwanted</span> IF [condition], THEN the [system] shall [action]</span>
+                    <span class="legend-item"><span class="badge pattern-state">State-Driven</span> WHILE [state], the [system] shall [action]</span>
+                    <span class="legend-item"><span class="badge pattern-optional">Optional</span> WHERE [feature], the [system] shall [action]</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

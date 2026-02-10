@@ -51,7 +51,7 @@ const componentColors = {
 // Initialize game
 async function initGame() {
     try {
-        const response = await fetch('clone-this-app-data.json');
+        const response = await fetch('data.json');
         gameData = await response.json();
         totalLevelsEl.textContent = gameData.length;
         loadLevel();
