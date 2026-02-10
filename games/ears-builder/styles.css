@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 860px;
     margin: 0 auto;
 }
 
@@ -55,13 +55,13 @@ body {
 header {
     text-align: center;
     color: white;
-    margin-bottom: 30px;
-    padding: 20px;
+    margin-bottom: 20px;
+    padding: 12px 20px;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 6px;
     background: linear-gradient(135deg, #a78bfa, #06b6d4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -69,8 +69,8 @@ header h1 {
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.45);
 }
 
 /* Game Info Bar */
@@ -85,12 +85,12 @@ header h1 {
 .score-panel {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 24px;
     flex-wrap: wrap;
 }
 
 .score-item {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
 }
 
 .score-item .label {
@@ -101,14 +101,14 @@ header h1 {
 .score-item .value {
     color: #a78bfa;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 /* Difficulty Badge */
 .difficulty-badge {
-    padding: 2px 10px;
+    padding: 2px 8px;
     border-radius: 12px;
-    font-size: 0.9rem !important;
+    font-size: 0.85rem !important;
 }
 
 .difficulty-badge.beginner {
@@ -131,9 +131,9 @@ header h1 {
 
 /* Mode Badge */
 .mode-badge {
-    padding: 2px 10px;
+    padding: 2px 8px;
     border-radius: 12px;
-    font-size: 0.9rem !important;
+    font-size: 0.85rem !important;
 }
 
 .mode-badge.guided {
@@ -165,7 +165,7 @@ header h1 {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 16px;
-    padding: 30px;
+    padding: 36px 40px;
     margin-bottom: 20px;
 }
 
@@ -181,21 +181,21 @@ header h1 {
 }
 
 .scenario-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #ffffff;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .scenario-card .scenario-description {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.6;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .scenario-card .scenario-context {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.35);
     font-style: italic;
 }
 
@@ -204,10 +204,10 @@ header h1 {
     background: rgba(245, 158, 11, 0.08);
     border: 2px dashed rgba(245, 158, 11, 0.3);
     border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 20px;
+    padding: 14px;
+    margin-bottom: 16px;
     font-family: 'Courier New', monospace;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     color: #fbbf24;
     text-align: center;
 }
@@ -244,7 +244,7 @@ header h1 {
 .issues-list li {
     padding: 4px 0;
     color: rgba(255, 255, 255, 0.6);
-    font-size: 0.95rem;
+    font-size: 0.85rem;
 }
 
 .issues-list li::before {
@@ -253,13 +253,18 @@ header h1 {
 
 /* Pattern Selection */
 .pattern-selection {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .pattern-selection h3 {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 12px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .pattern-options {
@@ -269,12 +274,12 @@ header h1 {
 }
 
 .pattern-btn {
-    padding: 10px 20px;
+    padding: 8px 16px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.04);
     cursor: pointer;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 600;
     transition: all 0.2s;
     color: rgba(255, 255, 255, 0.6);
@@ -319,24 +324,29 @@ header h1 {
 .template-display {
     background: rgba(255, 255, 255, 0.03);
     border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 24px;
+    padding: 14px;
+    margin-bottom: 20px;
     text-align: center;
     font-family: 'Courier New', monospace;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* Drop Zones */
 .drop-zones-section {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .drop-zones-section h3 {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 12px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .requirement-builder {
@@ -437,13 +447,16 @@ header h1 {
 
 /* Component Bank */
 .component-bank {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .component-bank h3 {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 12px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .component-bank-grid {
@@ -453,9 +466,9 @@ header h1 {
 }
 
 .component-chip {
-    padding: 10px 18px;
+    padding: 8px 14px;
     border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
     cursor: grab;
     transition: all 0.2s;
@@ -673,9 +686,9 @@ header h1 {
 
 /* Feedback */
 .feedback {
-    padding: 20px;
+    padding: 16px;
     border-radius: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     font-weight: 500;
     line-height: 1.6;
 }
@@ -699,8 +712,8 @@ header h1 {
 }
 
 .feedback h4 {
-    margin-bottom: 8px;
-    font-size: 1.1rem;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
 }
 
 .feedback .score-breakdown {
@@ -747,7 +760,8 @@ header h1 {
 
 .explanation h4 {
     color: #a78bfa;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
 }
 
 .explanation p {
@@ -816,18 +830,18 @@ header h1 {
 }
 
 .game-complete h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     background: linear-gradient(135deg, #a78bfa, #06b6d4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .game-complete p {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 1.1rem;
-    margin-bottom: 24px;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
 }
 
 .final-score {
@@ -835,7 +849,7 @@ header h1 {
 }
 
 .final-score h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: #a78bfa;
 }
 
@@ -855,8 +869,12 @@ header h1 {
 
 .patterns-mastered h3 {
     text-align: center;
-    margin-bottom: 16px;
-    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .pattern-mastery-item {
@@ -890,8 +908,12 @@ footer {
 
 .pattern-legend h3 {
     text-align: center;
-    margin-bottom: 16px;
-    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .legend-grid {
@@ -903,16 +925,16 @@ footer {
 .legend-item {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.5);
+    gap: 6px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
 }
 
 .badge {
     display: inline-block;
-    padding: 3px 10px;
+    padding: 2px 8px;
     border-radius: 12px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 600;
     white-space: nowrap;
 }

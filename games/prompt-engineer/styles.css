@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 860px;
     margin: 0 auto;
 }
 
@@ -54,13 +54,13 @@ body {
 header {
     text-align: center;
     color: white;
-    margin-bottom: 30px;
-    padding: 20px;
+    margin-bottom: 20px;
+    padding: 12px 20px;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 6px;
     background: linear-gradient(135deg, #a78bfa, #06b6d4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -68,8 +68,8 @@ header h1 {
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.45);
 }
 
 .game-info {
@@ -83,12 +83,12 @@ header h1 {
 .score-panel {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 24px;
     flex-wrap: wrap;
 }
 
 .score-item {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
 }
 
 .score-item .label {
@@ -99,27 +99,36 @@ header h1 {
 .score-item .value {
     color: #a78bfa;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 #game-container {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 16px;
-    padding: 30px;
+    padding: 36px 40px;
 }
 
 .prompt-section,
 .target-section,
 .cards-section,
 .selected-section {
-    margin-bottom: 30px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.selected-section {
+    border-bottom: none;
 }
 
 h2 {
-    color: #a78bfa;
-    margin-bottom: 15px;
-    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .prompt-box,
@@ -127,8 +136,8 @@ h2 {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
-    padding: 20px;
-    font-size: 1.05rem;
+    padding: 16px;
+    font-size: 0.95rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.8);
 }
@@ -139,22 +148,22 @@ h2 {
 }
 
 .hint {
-    margin-top: 10px;
-    color: rgba(255, 255, 255, 0.4);
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.35);
     font-style: italic;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
 }
 
 .instruction {
-    color: rgba(255, 255, 255, 0.4);
-    margin-bottom: 15px;
-    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin-bottom: 12px;
+    font-size: 0.85rem;
 }
 
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
 }
 
 .card {
@@ -195,16 +204,16 @@ h2 {
 }
 
 .card-text {
-    font-size: 1rem;
-    margin-bottom: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
     color: rgba(255, 255, 255, 0.85);
 }
 
 .card-technique {
     display: inline-block;
-    padding: 4px 10px;
+    padding: 3px 8px;
     border-radius: 6px;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -230,12 +239,12 @@ h2 {
 .selected-card {
     background: linear-gradient(135deg, #7c3aed, #06b6d4);
     color: white;
-    padding: 8px 15px;
+    padding: 6px 12px;
     border-radius: 8px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .selected-card-remove {
@@ -299,10 +308,10 @@ h2 {
 }
 
 .feedback {
-    padding: 20px;
+    padding: 16px;
     border-radius: 12px;
-    margin: 20px 0;
-    font-size: 1.1rem;
+    margin: 16px 0;
+    font-size: 0.95rem;
     font-weight: 600;
     text-align: center;
 }
@@ -329,7 +338,8 @@ h2 {
 
 .explanation h3 {
     color: #22d3ee;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
 }
 
 .explanation p {
@@ -355,12 +365,12 @@ h2 {
 }
 
 .game-complete h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     background: linear-gradient(135deg, #a78bfa, #06b6d4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .final-score {
@@ -372,7 +382,7 @@ h2 {
 }
 
 .final-score h3 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: #a78bfa;
 }
 
@@ -382,9 +392,13 @@ h2 {
 }
 
 .techniques-learned h3 {
-    color: #a78bfa;
-    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 12px;
     text-align: center;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .techniques-learned ul {
@@ -412,9 +426,13 @@ footer {
 }
 
 footer h3 {
-    color: #a78bfa;
-    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 12px;
     text-align: center;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .technique-legend {
@@ -430,15 +448,15 @@ footer h3 {
 .legend-item {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.5);
+    gap: 6px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
 }
 
 .badge {
-    padding: 4px 10px;
+    padding: 3px 8px;
     border-radius: 6px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
     color: white;
