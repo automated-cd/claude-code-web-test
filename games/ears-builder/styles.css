@@ -6,10 +6,10 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: #0a0e1a;
+    background: #f5f7fa;
     min-height: 100vh;
     padding: 20px;
-    color: #e0e0e0;
+    color: #2d3748;
 }
 
 .container {
@@ -22,14 +22,15 @@ body {
     text-align: center;
     margin-bottom: 10px;
     padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 12px;
     backdrop-filter: blur(10px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .game-nav a {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.5);
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
@@ -37,24 +38,24 @@ body {
 }
 
 .game-nav a:hover {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .game-nav a.active {
-    color: #a78bfa;
-    border-bottom: 2px solid #a78bfa;
+    color: #7c3aed;
+    border-bottom: 2px solid #7c3aed;
     padding-bottom: 2px;
 }
 
 .nav-divider {
-    color: rgba(255, 255, 255, 0.15);
+    color: rgba(0, 0, 0, 0.15);
     margin: 0 15px;
 }
 
 /* Header */
 header {
     text-align: center;
-    color: white;
+    color: #1e293b;
     margin-bottom: 20px;
     padding: 12px 20px;
 }
@@ -62,7 +63,7 @@ header {
 header h1 {
     font-size: 1.8rem;
     margin-bottom: 6px;
-    background: linear-gradient(135deg, #a78bfa, #06b6d4);
+    background: linear-gradient(135deg, #7c3aed, #0891b2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -70,16 +71,17 @@ header h1 {
 
 .subtitle {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
 }
 
 /* Game Info Bar */
 .game-info {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 16px;
     padding: 20px;
     margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .score-panel {
@@ -94,12 +96,12 @@ header h1 {
 }
 
 .score-item .label {
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
     font-weight: 500;
 }
 
 .score-item .value {
-    color: #a78bfa;
+    color: #7c3aed;
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -112,20 +114,20 @@ header h1 {
 }
 
 .difficulty-badge.beginner {
-    background: rgba(16, 185, 129, 0.15);
-    color: #34d399;
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
     border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 .difficulty-badge.intermediate {
-    background: rgba(245, 158, 11, 0.15);
-    color: #fbbf24;
+    background: rgba(245, 158, 11, 0.1);
+    color: #d97706;
     border: 1px solid rgba(245, 158, 11, 0.2);
 }
 
 .difficulty-badge.advanced {
-    background: rgba(239, 68, 68, 0.15);
-    color: #f87171;
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
     border: 1px solid rgba(239, 68, 68, 0.2);
 }
 
@@ -137,20 +139,20 @@ header h1 {
 }
 
 .mode-badge.guided {
-    background: rgba(6, 182, 212, 0.15);
-    color: #22d3ee;
+    background: rgba(6, 182, 212, 0.1);
+    color: #0891b2;
     border: 1px solid rgba(6, 182, 212, 0.2);
 }
 
 .mode-badge.detective {
-    background: rgba(168, 85, 247, 0.15);
-    color: #c084fc;
+    background: rgba(168, 85, 247, 0.1);
+    color: #9333ea;
     border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .mode-badge.inspector {
-    background: rgba(249, 115, 22, 0.15);
-    color: #fb923c;
+    background: rgba(249, 115, 22, 0.1);
+    color: #ea580c;
     border: 1px solid rgba(249, 115, 22, 0.2);
 }
 
@@ -162,53 +164,53 @@ header h1 {
 
 /* Game Container */
 #game-container {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 16px;
     padding: 36px 40px;
     margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 /* Scenario Card */
 .scenario-card {
-    background: rgba(124, 58, 237, 0.06);
+    background: rgba(124, 58, 237, 0.04);
     border-radius: 16px;
     padding: 24px;
     margin-bottom: 24px;
-    border-left: 4px solid #7c3aed;
-    border: 1px solid rgba(124, 58, 237, 0.15);
+    border: 1px solid rgba(124, 58, 237, 0.12);
     border-left: 4px solid #7c3aed;
 }
 
 .scenario-card h3 {
     font-size: 1.1rem;
-    color: #ffffff;
+    color: #1e293b;
     margin-bottom: 6px;
 }
 
 .scenario-card .scenario-description {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.65);
     line-height: 1.6;
     margin-bottom: 6px;
 }
 
 .scenario-card .scenario-context {
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(0, 0, 0, 0.4);
     font-style: italic;
 }
 
 /* Inspector Mode - Broken Requirement */
 .broken-requirement {
-    background: rgba(245, 158, 11, 0.08);
+    background: rgba(245, 158, 11, 0.06);
     border: 2px dashed rgba(245, 158, 11, 0.3);
     border-radius: 12px;
     padding: 14px;
     margin-bottom: 16px;
     font-family: 'Courier New', monospace;
     font-size: 0.95rem;
-    color: #fbbf24;
+    color: #d97706;
     text-align: center;
 }
 
@@ -216,7 +218,7 @@ header h1 {
     display: block;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 0.85rem;
-    color: #f59e0b;
+    color: #d97706;
     font-weight: 600;
     margin-bottom: 8px;
     text-transform: uppercase;
@@ -224,7 +226,7 @@ header h1 {
 }
 
 .issues-list {
-    background: rgba(245, 158, 11, 0.06);
+    background: rgba(245, 158, 11, 0.04);
     border: 1px solid rgba(245, 158, 11, 0.15);
     border-radius: 12px;
     padding: 16px;
@@ -232,7 +234,7 @@ header h1 {
 }
 
 .issues-list h4 {
-    color: #fbbf24;
+    color: #d97706;
     margin-bottom: 8px;
 }
 
@@ -243,7 +245,7 @@ header h1 {
 
 .issues-list li {
     padding: 4px 0;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(0, 0, 0, 0.55);
     font-size: 0.85rem;
 }
 
@@ -255,12 +257,12 @@ header h1 {
 .pattern-selection {
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .pattern-selection h3 {
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -275,20 +277,21 @@ header h1 {
 
 .pattern-btn {
     padding: 8px 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.04);
+    background: #ffffff;
     cursor: pointer;
     font-size: 0.85rem;
     font-weight: 600;
     transition: all 0.2s;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(0, 0, 0, 0.55);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .pattern-btn:hover {
-    border-color: rgba(124, 58, 237, 0.4);
-    color: #a78bfa;
-    background: rgba(124, 58, 237, 0.08);
+    border-color: rgba(124, 58, 237, 0.35);
+    color: #7c3aed;
+    background: rgba(124, 58, 237, 0.04);
 }
 
 .pattern-btn.selected {
@@ -312,37 +315,37 @@ header h1 {
 .pattern-pre-selected {
     display: inline-block;
     padding: 8px 16px;
-    background: rgba(124, 58, 237, 0.12);
-    border: 1px solid rgba(124, 58, 237, 0.3);
+    background: rgba(124, 58, 237, 0.08);
+    border: 1px solid rgba(124, 58, 237, 0.2);
     border-radius: 10px;
-    color: #a78bfa;
+    color: #7c3aed;
     font-weight: 600;
     font-size: 0.95rem;
 }
 
 /* Template Display */
 .template-display {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(0, 0, 0, 0.02);
     border-radius: 12px;
     padding: 14px;
     margin-bottom: 20px;
     text-align: center;
     font-family: 'Courier New', monospace;
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 /* Drop Zones */
 .drop-zones-section {
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .drop-zones-section h3 {
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -355,22 +358,22 @@ header h1 {
     align-items: center;
     gap: 8px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(0, 0, 0, 0.02);
     border-radius: 16px;
-    border: 2px dashed rgba(255, 255, 255, 0.08);
+    border: 2px dashed rgba(0, 0, 0, 0.08);
     min-height: 80px;
 }
 
 .requirement-builder .static-text {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
     font-weight: 500;
 }
 
 .drop-zone {
     min-width: 150px;
     min-height: 48px;
-    border: 2px dashed rgba(255, 255, 255, 0.15);
+    border: 2px dashed rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     padding: 10px 16px;
     display: flex;
@@ -378,25 +381,25 @@ header h1 {
     justify-content: center;
     transition: all 0.3s;
     position: relative;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(0, 0, 0, 0.02);
 }
 
 .drop-zone.empty {
-    color: rgba(255, 255, 255, 0.25);
+    color: rgba(0, 0, 0, 0.3);
     font-size: 0.85rem;
     font-style: italic;
 }
 
 .drop-zone.drag-over {
     border-color: #7c3aed;
-    background: rgba(124, 58, 237, 0.1);
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
+    background: rgba(124, 58, 237, 0.06);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
     transform: scale(1.02);
 }
 
 .drop-zone.invalid-drag-over {
     border-color: #ef4444;
-    background: rgba(239, 68, 68, 0.08);
+    background: rgba(239, 68, 68, 0.05);
 }
 
 .drop-zone.filled {
@@ -406,19 +409,19 @@ header h1 {
 
 .drop-zone.broken {
     border-color: rgba(245, 158, 11, 0.4);
-    background: rgba(245, 158, 11, 0.06);
+    background: rgba(245, 158, 11, 0.04);
     border-style: solid;
 }
 
 .drop-zone.broken .zone-content {
-    color: #fbbf24;
+    color: #d97706;
     text-decoration: line-through;
     text-decoration-color: #ef4444;
 }
 
 .drop-zone.fixed {
     border-color: rgba(16, 185, 129, 0.4);
-    background: rgba(16, 185, 129, 0.06);
+    background: rgba(16, 185, 129, 0.04);
     border-style: solid;
 }
 
@@ -426,10 +429,10 @@ header h1 {
     position: absolute;
     top: -10px;
     left: 10px;
-    background: #0a0e1a;
+    background: #f5f7fa;
     padding: 0 6px;
     font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(0, 0, 0, 0.4);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -437,7 +440,7 @@ header h1 {
 
 .drop-zone .zone-hint {
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(0, 0, 0, 0.25);
 }
 
 .drop-zone .zone-content {
@@ -452,7 +455,7 @@ header h1 {
 
 .component-bank h3 {
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -492,125 +495,125 @@ header h1 {
     pointer-events: none;
 }
 
-/* Component category colors - dark theme */
+/* Component category colors - light theme */
 .component-chip.keyword {
-    background: rgba(6, 182, 212, 0.12);
-    color: #22d3ee;
+    background: rgba(6, 182, 212, 0.1);
+    color: #0891b2;
     border-color: rgba(6, 182, 212, 0.25);
 }
 
 .component-chip.keyword:hover {
-    background: rgba(6, 182, 212, 0.2);
-    box-shadow: 0 0 16px rgba(6, 182, 212, 0.15);
+    background: rgba(6, 182, 212, 0.18);
+    box-shadow: 0 0 16px rgba(6, 182, 212, 0.12);
 }
 
 .component-chip.system {
-    background: rgba(16, 185, 129, 0.12);
-    color: #34d399;
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
     border-color: rgba(16, 185, 129, 0.25);
 }
 
 .component-chip.system:hover {
-    background: rgba(16, 185, 129, 0.2);
-    box-shadow: 0 0 16px rgba(16, 185, 129, 0.15);
+    background: rgba(16, 185, 129, 0.18);
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.12);
 }
 
 .component-chip.trigger {
-    background: rgba(249, 115, 22, 0.12);
-    color: #fb923c;
+    background: rgba(249, 115, 22, 0.1);
+    color: #ea580c;
     border-color: rgba(249, 115, 22, 0.25);
 }
 
 .component-chip.trigger:hover {
-    background: rgba(249, 115, 22, 0.2);
-    box-shadow: 0 0 16px rgba(249, 115, 22, 0.15);
+    background: rgba(249, 115, 22, 0.18);
+    box-shadow: 0 0 16px rgba(249, 115, 22, 0.12);
 }
 
 .component-chip.condition {
-    background: rgba(168, 85, 247, 0.12);
-    color: #c084fc;
+    background: rgba(168, 85, 247, 0.1);
+    color: #9333ea;
     border-color: rgba(168, 85, 247, 0.25);
 }
 
 .component-chip.condition:hover {
-    background: rgba(168, 85, 247, 0.2);
-    box-shadow: 0 0 16px rgba(168, 85, 247, 0.15);
+    background: rgba(168, 85, 247, 0.18);
+    box-shadow: 0 0 16px rgba(168, 85, 247, 0.12);
 }
 
 .component-chip.action {
-    background: rgba(236, 72, 153, 0.12);
-    color: #f472b6;
+    background: rgba(236, 72, 153, 0.1);
+    color: #db2777;
     border-color: rgba(236, 72, 153, 0.25);
 }
 
 .component-chip.action:hover {
-    background: rgba(236, 72, 153, 0.2);
-    box-shadow: 0 0 16px rgba(236, 72, 153, 0.15);
+    background: rgba(236, 72, 153, 0.18);
+    box-shadow: 0 0 16px rgba(236, 72, 153, 0.12);
 }
 
 /* Filled drop zone colors */
 .drop-zone.filled.keyword {
     border-color: rgba(6, 182, 212, 0.4);
-    background: rgba(6, 182, 212, 0.08);
+    background: rgba(6, 182, 212, 0.06);
 }
 
 .drop-zone.filled.keyword .zone-content {
-    color: #22d3ee;
+    color: #0891b2;
 }
 
 .drop-zone.filled.system {
     border-color: rgba(16, 185, 129, 0.4);
-    background: rgba(16, 185, 129, 0.08);
+    background: rgba(16, 185, 129, 0.06);
 }
 
 .drop-zone.filled.system .zone-content {
-    color: #34d399;
+    color: #059669;
 }
 
 .drop-zone.filled.trigger {
     border-color: rgba(249, 115, 22, 0.4);
-    background: rgba(249, 115, 22, 0.08);
+    background: rgba(249, 115, 22, 0.06);
 }
 
 .drop-zone.filled.trigger .zone-content {
-    color: #fb923c;
+    color: #ea580c;
 }
 
 .drop-zone.filled.condition {
     border-color: rgba(168, 85, 247, 0.4);
-    background: rgba(168, 85, 247, 0.08);
+    background: rgba(168, 85, 247, 0.06);
 }
 
 .drop-zone.filled.condition .zone-content {
-    color: #c084fc;
+    color: #9333ea;
 }
 
 .drop-zone.filled.action {
     border-color: rgba(236, 72, 153, 0.4);
-    background: rgba(236, 72, 153, 0.08);
+    background: rgba(236, 72, 153, 0.06);
 }
 
 .drop-zone.filled.action .zone-content {
-    color: #f472b6;
+    color: #db2777;
 }
 
 /* Feedback on drop zones */
 .drop-zone.correct-zone {
     border-color: rgba(16, 185, 129, 0.5) !important;
-    background: rgba(16, 185, 129, 0.1) !important;
+    background: rgba(16, 185, 129, 0.08) !important;
 }
 
 .drop-zone.correct-zone .zone-content {
-    color: #34d399 !important;
+    color: #059669 !important;
 }
 
 .drop-zone.incorrect-zone {
     border-color: rgba(239, 68, 68, 0.5) !important;
-    background: rgba(239, 68, 68, 0.1) !important;
+    background: rgba(239, 68, 68, 0.08) !important;
 }
 
 .drop-zone.incorrect-zone .zone-content {
-    color: #f87171 !important;
+    color: #dc2626 !important;
 }
 
 /* Category labels in bank */
@@ -625,11 +628,11 @@ header h1 {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(0, 0, 0, 0.4);
     margin-bottom: 6px;
     padding: 2px 8px;
     border-radius: 4px;
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(0, 0, 0, 0.03);
 }
 
 /* Actions */
@@ -663,24 +666,24 @@ header h1 {
 
 .btn-primary:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.06);
-    color: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.04);
+    color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .btn-secondary:hover:not(:disabled) {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    background: rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 /* Hint Button */
 .hints-remaining {
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(0, 0, 0, 0.4);
     margin-left: 4px;
 }
 
@@ -694,21 +697,21 @@ header h1 {
 }
 
 .feedback.correct {
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.25);
-    color: #34d399;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    color: #059669;
 }
 
 .feedback.incorrect {
-    background: rgba(239, 68, 68, 0.1);
-    border: 1px solid rgba(239, 68, 68, 0.25);
-    color: #f87171;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: #dc2626;
 }
 
 .feedback.partial {
-    background: rgba(245, 158, 11, 0.1);
-    border: 1px solid rgba(245, 158, 11, 0.25);
-    color: #fbbf24;
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    color: #d97706;
 }
 
 .feedback h4 {
@@ -726,86 +729,84 @@ header h1 {
 }
 
 .feedback .score-breakdown .points-positive {
-    color: #34d399;
+    color: #059669;
 }
 
 .feedback .score-breakdown .points-negative {
-    color: #f87171;
+    color: #dc2626;
 }
 
 /* Trap warnings */
 .trap-warnings {
     margin-top: 16px;
     padding: 12px;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(0, 0, 0, 0.02);
     border-radius: 8px;
 }
 
 .trap-warning-item {
     padding: 4px 0;
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.5);
 }
 
 /* Explanation */
 .explanation {
-    background: rgba(124, 58, 237, 0.06);
+    background: rgba(124, 58, 237, 0.04);
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 20px;
-    border-left: 4px solid #7c3aed;
-    border: 1px solid rgba(124, 58, 237, 0.15);
+    border: 1px solid rgba(124, 58, 237, 0.12);
     border-left: 4px solid #7c3aed;
 }
 
 .explanation h4 {
-    color: #a78bfa;
+    color: #7c3aed;
     margin-bottom: 6px;
     font-size: 0.9rem;
 }
 
 .explanation p {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(0, 0, 0, 0.6);
     line-height: 1.6;
 }
 
 /* Constructed Requirement */
 .constructed-requirement {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(0, 0, 0, 0.02);
     border-radius: 12px;
     padding: 16px;
     margin: 12px 0;
     font-family: 'Courier New', monospace;
     font-size: 1rem;
     line-height: 1.5;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-left: 4px solid #7c3aed;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-left: 4px solid #7c3aed;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.65);
 }
 
 .constructed-requirement .keyword-highlight {
-    color: #22d3ee;
+    color: #0891b2;
     font-weight: 700;
 }
 
 .constructed-requirement .system-highlight {
-    color: #34d399;
+    color: #059669;
     font-weight: 700;
 }
 
 .constructed-requirement .trigger-highlight {
-    color: #fb923c;
+    color: #ea580c;
     font-weight: 700;
 }
 
 .constructed-requirement .condition-highlight {
-    color: #c084fc;
+    color: #9333ea;
     font-weight: 700;
 }
 
 .constructed-requirement .action-highlight {
-    color: #f472b6;
+    color: #db2777;
     font-weight: 700;
 }
 
@@ -822,16 +823,17 @@ header h1 {
 
 /* Game Complete */
 .game-complete {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 16px;
     padding: 40px;
     text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .game-complete h2 {
     font-size: 1.8rem;
-    background: linear-gradient(135deg, #a78bfa, #06b6d4);
+    background: linear-gradient(135deg, #7c3aed, #0891b2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -839,7 +841,7 @@ header h1 {
 }
 
 .game-complete p {
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
     font-size: 0.95rem;
     margin-bottom: 20px;
 }
@@ -850,7 +852,7 @@ header h1 {
 
 .final-score h3 {
     font-size: 1.5rem;
-    color: #a78bfa;
+    color: #7c3aed;
 }
 
 .final-stars {
@@ -870,7 +872,7 @@ header h1 {
 .patterns-mastered h3 {
     text-align: center;
     margin-bottom: 12px;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -884,32 +886,33 @@ header h1 {
     padding: 10px 16px;
     border-radius: 10px;
     margin-bottom: 8px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .pattern-mastery-item .pattern-name {
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.75);
 }
 
 .pattern-mastery-item .pattern-score {
-    color: #a78bfa;
+    color: #7c3aed;
     font-weight: bold;
 }
 
 /* Footer / Legend */
 footer {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 16px;
     padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .pattern-legend h3 {
     text-align: center;
     margin-bottom: 12px;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -927,7 +930,7 @@ footer {
     align-items: center;
     gap: 6px;
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .badge {
@@ -940,32 +943,32 @@ footer {
 }
 
 .badge.pattern-ubiquitous {
-    background: rgba(16, 185, 129, 0.15);
-    color: #34d399;
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
     border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 .badge.pattern-event {
-    background: rgba(249, 115, 22, 0.15);
-    color: #fb923c;
+    background: rgba(249, 115, 22, 0.1);
+    color: #ea580c;
     border: 1px solid rgba(249, 115, 22, 0.2);
 }
 
 .badge.pattern-unwanted {
-    background: rgba(239, 68, 68, 0.15);
-    color: #f87171;
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
     border: 1px solid rgba(239, 68, 68, 0.2);
 }
 
 .badge.pattern-state {
-    background: rgba(168, 85, 247, 0.15);
-    color: #c084fc;
+    background: rgba(168, 85, 247, 0.1);
+    color: #9333ea;
     border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .badge.pattern-optional {
-    background: rgba(6, 182, 212, 0.15);
-    color: #22d3ee;
+    background: rgba(6, 182, 212, 0.1);
+    color: #0891b2;
     border: 1px solid rgba(6, 182, 212, 0.2);
 }
 
@@ -973,7 +976,7 @@ footer {
 .progress-bar {
     width: 100%;
     height: 6px;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(0, 0, 0, 0.06);
     border-radius: 3px;
     margin-top: 12px;
     overflow: hidden;

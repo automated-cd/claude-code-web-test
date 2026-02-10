@@ -6,10 +6,10 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: #0a0e1a;
+    background: #f5f7fa;
     min-height: 100vh;
     padding: 20px;
-    color: #e0e0e0;
+    color: #2d3748;
 }
 
 .container {
@@ -22,14 +22,15 @@ body {
     text-align: center;
     margin-bottom: 10px;
     padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 12px;
     backdrop-filter: blur(10px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .game-nav a {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.5);
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
@@ -37,24 +38,24 @@ body {
 }
 
 .game-nav a:hover {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .game-nav a.active {
-    color: #a78bfa;
-    border-bottom: 2px solid #a78bfa;
+    color: #7c3aed;
+    border-bottom: 2px solid #7c3aed;
     padding-bottom: 2px;
 }
 
 .nav-divider {
-    color: rgba(255, 255, 255, 0.15);
+    color: rgba(0, 0, 0, 0.15);
     margin: 0 15px;
 }
 
 /* Header */
 header {
     text-align: center;
-    color: white;
+    color: #1e293b;
     margin-bottom: 20px;
     padding: 12px 20px;
 }
@@ -62,7 +63,7 @@ header {
 header h1 {
     font-size: 1.8rem;
     margin-bottom: 6px;
-    background: linear-gradient(135deg, #a78bfa, #06b6d4);
+    background: linear-gradient(135deg, #7c3aed, #0891b2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -70,16 +71,17 @@ header h1 {
 
 .subtitle {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
 }
 
 /* Game Info Bar */
 .game-info {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 16px;
     padding: 20px;
     margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .score-panel {
@@ -94,12 +96,12 @@ header h1 {
 }
 
 .score-item .label {
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
     font-weight: 500;
 }
 
 .score-item .value {
-    color: #a78bfa;
+    color: #7c3aed;
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -108,28 +110,29 @@ header h1 {
     font-size: 0.85rem !important;
     padding: 2px 8px;
     border-radius: 6px;
-    background: rgba(16, 185, 129, 0.15);
-    color: #34d399 !important;
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669 !important;
     border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 /* Game Container */
 #game-container {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 16px;
     padding: 36px 40px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .challenge-header {
     text-align: center;
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .challenge-header h2 {
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
     font-size: 0.8rem;
     margin-bottom: 6px;
     text-transform: uppercase;
@@ -138,7 +141,7 @@ header h1 {
 }
 
 .challenge-desc {
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
     font-size: 0.9rem;
 }
 
@@ -149,12 +152,12 @@ header h1 {
     gap: 24px;
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .mockup-panel h3,
 .components-panel h3 {
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
     margin-bottom: 8px;
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -163,7 +166,7 @@ header h1 {
 }
 
 .instruction {
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(0, 0, 0, 0.4);
     font-size: 0.85rem;
     margin-bottom: 12px;
     font-style: italic;
@@ -171,10 +174,10 @@ header h1 {
 
 /* Mockup Wrapper */
 .mockup-wrapper {
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 16px;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(0, 0, 0, 0.02);
 }
 
 /* ========================================
@@ -225,13 +228,13 @@ header h1 {
 .drop-zone.active {
     outline: 3px solid #7c3aed;
     outline-offset: -3px;
-    background-color: rgba(124, 58, 237, 0.1);
+    background-color: rgba(124, 58, 237, 0.08);
 }
 
 .drop-zone.drag-over {
     outline: 3px dashed #10b981;
     outline-offset: -3px;
-    background-color: rgba(16, 185, 129, 0.1);
+    background-color: rgba(16, 185, 129, 0.08);
 }
 
 .drop-zone.assigned {
@@ -242,13 +245,13 @@ header h1 {
 .drop-zone.correct {
     outline: 3px solid #10b981;
     outline-offset: -3px;
-    background-color: rgba(16, 185, 129, 0.1);
+    background-color: rgba(16, 185, 129, 0.08);
 }
 
 .drop-zone.incorrect {
     outline: 3px solid #ef4444;
     outline-offset: -3px;
-    background-color: rgba(239, 68, 68, 0.1);
+    background-color: rgba(239, 68, 68, 0.08);
 }
 
 .zone-label {
@@ -692,27 +695,28 @@ header h1 {
 
 .component-label {
     padding: 6px 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.04);
+    background: #ffffff;
     font-size: 0.8rem;
     font-weight: 600;
     cursor: grab;
     transition: all 0.2s ease;
     user-select: none;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.75);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .component-label:hover {
-    border-color: rgba(124, 58, 237, 0.4);
-    box-shadow: 0 2px 12px rgba(124, 58, 237, 0.15);
+    border-color: rgba(124, 58, 237, 0.35);
+    box-shadow: 0 2px 12px rgba(124, 58, 237, 0.12);
     transform: translateY(-1px);
 }
 
 .component-label.selected {
     border-color: #7c3aed;
-    background: rgba(124, 58, 237, 0.12);
-    box-shadow: 0 0 16px rgba(124, 58, 237, 0.2);
+    background: rgba(124, 58, 237, 0.08);
+    box-shadow: 0 0 16px rgba(124, 58, 237, 0.15);
 }
 
 .component-label.dragging {
@@ -744,7 +748,7 @@ header h1 {
 }
 
 .assignments-section h3 {
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
     font-size: 0.8rem;
     margin-bottom: 8px;
     text-transform: uppercase;
@@ -763,8 +767,8 @@ header h1 {
     align-items: center;
     gap: 8px;
     padding: 6px 10px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 8px;
     font-size: 0.85rem;
 }
@@ -784,7 +788,7 @@ header h1 {
 }
 
 .assignment-zone-label {
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
     flex: 1;
     min-width: 0;
     overflow: hidden;
@@ -793,18 +797,18 @@ header h1 {
 }
 
 .assignment-arrow {
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(0, 0, 0, 0.2);
     flex-shrink: 0;
 }
 
 .assignment-value {
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(0, 0, 0, 0.8);
     flex-shrink: 0;
 }
 
 .assignment-value.empty {
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(0, 0, 0, 0.25);
     font-weight: 400;
     font-style: italic;
 }
@@ -812,7 +816,7 @@ header h1 {
 .assignment-clear {
     background: none;
     border: none;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(0, 0, 0, 0.3);
     cursor: pointer;
     font-size: 1rem;
     padding: 0 2px;
@@ -824,12 +828,12 @@ header h1 {
 }
 
 .assignment-row.correct {
-    background: rgba(16, 185, 129, 0.1);
+    background: rgba(16, 185, 129, 0.08);
     border-left: 3px solid #10b981;
 }
 
 .assignment-row.incorrect {
-    background: rgba(239, 68, 68, 0.1);
+    background: rgba(239, 68, 68, 0.08);
     border-left: 3px solid #ef4444;
 }
 
@@ -861,18 +865,18 @@ header h1 {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.06);
-    color: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.04);
+    color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    background: rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .btn:disabled {
@@ -895,40 +899,40 @@ header h1 {
 }
 
 .feedback.success {
-    background: rgba(16, 185, 129, 0.1);
-    color: #34d399;
-    border: 1px solid rgba(16, 185, 129, 0.25);
+    background: rgba(16, 185, 129, 0.08);
+    color: #059669;
+    border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 .feedback.partial {
-    background: rgba(245, 158, 11, 0.1);
-    color: #fbbf24;
-    border: 1px solid rgba(245, 158, 11, 0.25);
+    background: rgba(245, 158, 11, 0.08);
+    color: #d97706;
+    border: 1px solid rgba(245, 158, 11, 0.2);
 }
 
 .feedback.error {
-    background: rgba(239, 68, 68, 0.1);
-    color: #f87171;
-    border: 1px solid rgba(239, 68, 68, 0.25);
+    background: rgba(239, 68, 68, 0.08);
+    color: #dc2626;
+    border: 1px solid rgba(239, 68, 68, 0.2);
 }
 
 .explanation {
-    background: rgba(6, 182, 212, 0.06);
-    border: 1px solid rgba(6, 182, 212, 0.2);
+    background: rgba(6, 182, 212, 0.05);
+    border: 1px solid rgba(6, 182, 212, 0.15);
     border-radius: 12px;
     padding: 20px;
     margin: 20px 0;
 }
 
 .explanation h3 {
-    color: #22d3ee;
+    color: #0891b2;
     margin-bottom: 8px;
     font-size: 0.9rem;
 }
 
 .explanation p {
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.65);
 }
 
 .hidden {
@@ -945,16 +949,17 @@ header h1 {
    ======================================== */
 
 .game-complete {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 16px;
     padding: 40px;
     text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .game-complete h2 {
     font-size: 1.8rem;
-    background: linear-gradient(135deg, #a78bfa, #06b6d4);
+    background: linear-gradient(135deg, #7c3aed, #0891b2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -964,14 +969,14 @@ header h1 {
 .final-score {
     margin: 30px 0;
     padding: 20px;
-    background: rgba(124, 58, 237, 0.08);
-    border: 1px solid rgba(124, 58, 237, 0.15);
+    background: rgba(124, 58, 237, 0.05);
+    border: 1px solid rgba(124, 58, 237, 0.12);
     border-radius: 12px;
 }
 
 .final-score h3 {
     font-size: 1.6rem;
-    color: #a78bfa;
+    color: #7c3aed;
 }
 
 .skills-learned {
@@ -979,7 +984,7 @@ header h1 {
 }
 
 .skills-learned h3 {
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
     margin-bottom: 12px;
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -1008,14 +1013,15 @@ header h1 {
 
 footer {
     margin-top: 30px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 16px;
     padding: 25px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 footer h3 {
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
     margin-bottom: 12px;
     text-align: center;
     font-size: 0.8rem;
@@ -1035,7 +1041,7 @@ footer h3 {
     align-items: center;
     gap: 6px;
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .badge {
@@ -1048,14 +1054,14 @@ footer h3 {
     white-space: nowrap;
 }
 
-.badge.comp-image { background: rgba(168, 85, 247, 0.7); }
-.badge.comp-text { background: rgba(6, 182, 212, 0.7); }
-.badge.comp-icon-btn { background: rgba(245, 158, 11, 0.7); }
-.badge.comp-repeating { background: rgba(16, 185, 129, 0.7); }
-.badge.comp-formula { background: rgba(236, 72, 153, 0.7); }
-.badge.comp-input { background: rgba(6, 182, 212, 0.9); }
-.badge.comp-action-btn { background: rgba(249, 115, 22, 0.7); }
-.badge.comp-rating { background: rgba(234, 179, 8, 0.7); }
+.badge.comp-image { background: rgba(168, 85, 247, 0.8); }
+.badge.comp-text { background: rgba(6, 182, 212, 0.8); }
+.badge.comp-icon-btn { background: rgba(245, 158, 11, 0.8); }
+.badge.comp-repeating { background: rgba(16, 185, 129, 0.8); }
+.badge.comp-formula { background: rgba(236, 72, 153, 0.8); }
+.badge.comp-input { background: rgba(6, 182, 212, 0.95); }
+.badge.comp-action-btn { background: rgba(249, 115, 22, 0.8); }
+.badge.comp-rating { background: rgba(234, 179, 8, 0.8); }
 
 /* ========================================
    RESPONSIVE
