@@ -775,7 +775,7 @@ function revealOneCorrectComponent(level) {
 
 function showTemporaryMessage(msg) {
     const overlay = document.createElement('div');
-    overlay.style.cssText = 'position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#333;color:white;padding:16px 24px;border-radius:8px;z-index:1000;font-size:0.95rem;max-width:500px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
+    overlay.style.cssText = 'position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#ffffff;color:#2d3748;padding:16px 24px;border-radius:8px;z-index:1000;font-size:0.95rem;max-width:500px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.12);border:1px solid rgba(0,0,0,0.08);';
     overlay.textContent = msg;
     document.body.appendChild(overlay);
     setTimeout(() => {
