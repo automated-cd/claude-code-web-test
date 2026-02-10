@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 960px;
     margin: 0 auto;
 }
 
@@ -55,13 +55,13 @@ body {
 header {
     text-align: center;
     color: white;
-    margin-bottom: 30px;
-    padding: 20px;
+    margin-bottom: 20px;
+    padding: 12px 20px;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 6px;
     background: linear-gradient(135deg, #a78bfa, #06b6d4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -69,8 +69,8 @@ header h1 {
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.45);
 }
 
 /* Game Info Bar */
@@ -85,12 +85,12 @@ header h1 {
 .score-panel {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 24px;
     flex-wrap: wrap;
 }
 
 .score-item {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
 }
 
 .score-item .label {
@@ -101,12 +101,12 @@ header h1 {
 .score-item .value {
     color: #a78bfa;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .difficulty-badge {
-    font-size: 1rem !important;
-    padding: 2px 10px;
+    font-size: 0.85rem !important;
+    padding: 2px 8px;
     border-radius: 6px;
     background: rgba(16, 185, 129, 0.15);
     color: #34d399 !important;
@@ -118,44 +118,54 @@ header h1 {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 16px;
-    padding: 30px;
+    padding: 36px 40px;
 }
 
 .challenge-header {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .challenge-header h2 {
-    color: #a78bfa;
-    font-size: 1.8rem;
-    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .challenge-desc {
     color: rgba(255, 255, 255, 0.45);
-    font-size: 1.05rem;
+    font-size: 0.9rem;
 }
 
 /* Game Layout - Two panels */
 .game-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-bottom: 25px;
+    gap: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .mockup-panel h3,
 .components-panel h3 {
-    color: #a78bfa;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .instruction {
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 0.9rem;
-    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.85rem;
+    margin-bottom: 12px;
     font-style: italic;
 }
 
@@ -681,11 +691,11 @@ header h1 {
 }
 
 .component-label {
-    padding: 8px 14px;
+    padding: 6px 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.04);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     cursor: grab;
     transition: all 0.2s ease;
@@ -734,9 +744,12 @@ header h1 {
 }
 
 .assignments-section h3 {
-    color: #a78bfa;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .assignments-list {
@@ -873,10 +886,10 @@ header h1 {
    ======================================== */
 
 .feedback {
-    padding: 20px;
+    padding: 16px;
     border-radius: 12px;
-    margin: 20px 0;
-    font-size: 1.1rem;
+    margin: 16px 0;
+    font-size: 0.95rem;
     font-weight: 600;
     text-align: center;
 }
@@ -909,7 +922,8 @@ header h1 {
 
 .explanation h3 {
     color: #22d3ee;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
 }
 
 .explanation p {
@@ -939,12 +953,12 @@ header h1 {
 }
 
 .game-complete h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     background: linear-gradient(135deg, #a78bfa, #06b6d4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .final-score {
@@ -956,7 +970,7 @@ header h1 {
 }
 
 .final-score h3 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: #a78bfa;
 }
 
@@ -965,8 +979,12 @@ header h1 {
 }
 
 .skills-learned h3 {
-    color: #a78bfa;
-    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .components-grid {
@@ -997,9 +1015,13 @@ footer {
 }
 
 footer h3 {
-    color: #a78bfa;
-    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 12px;
     text-align: center;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .legend-grid {
@@ -1011,15 +1033,15 @@ footer h3 {
 .legend-item {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.5);
+    gap: 6px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
 }
 
 .badge {
-    padding: 4px 10px;
+    padding: 3px 8px;
     border-radius: 6px;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 700;
     text-transform: uppercase;
     color: white;
