@@ -6,10 +6,10 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #0a0e1a;
     min-height: 100vh;
     padding: 20px;
-    color: #333;
+    color: #e0e0e0;
 }
 
 .container {
@@ -22,12 +22,14 @@ body {
     text-align: center;
     margin-bottom: 10px;
     padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
 }
 
 .game-nav a {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
@@ -35,17 +37,17 @@ body {
 }
 
 .game-nav a:hover {
-    color: white;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .game-nav a.active {
-    color: white;
-    border-bottom: 2px solid white;
+    color: #a78bfa;
+    border-bottom: 2px solid #a78bfa;
     padding-bottom: 2px;
 }
 
 .nav-divider {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.15);
     margin: 0 15px;
 }
 
@@ -59,20 +61,23 @@ header {
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #a78bfa, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .subtitle {
     font-size: 1.1rem;
-    opacity: 0.95;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .game-info {
-    background: white;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .score-panel {
@@ -87,21 +92,21 @@ header h1 {
 }
 
 .score-item .label {
-    color: #666;
+    color: rgba(255, 255, 255, 0.45);
     font-weight: 500;
 }
 
 .score-item .value {
-    color: #667eea;
+    color: #a78bfa;
     font-weight: bold;
     font-size: 1.5rem;
 }
 
 #game-container {
-    background: white;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
     padding: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .prompt-section,
@@ -112,35 +117,36 @@ header h1 {
 }
 
 h2 {
-    color: #667eea;
+    color: #a78bfa;
     margin-bottom: 15px;
     font-size: 1.5rem;
 }
 
 .prompt-box,
 .target-box {
-    background: #f8f9fa;
-    border: 2px solid #e9ecef;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
     padding: 20px;
     font-size: 1.05rem;
     line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .target-box {
-    background: #fff8e1;
-    border-color: #ffd54f;
+    background: rgba(124, 58, 237, 0.06);
+    border-color: rgba(124, 58, 237, 0.2);
 }
 
 .hint {
     margin-top: 10px;
-    color: #666;
+    color: rgba(255, 255, 255, 0.4);
     font-style: italic;
     font-size: 0.95rem;
 }
 
 .instruction {
-    color: #666;
+    color: rgba(255, 255, 255, 0.4);
     margin-bottom: 15px;
     font-size: 0.95rem;
 }
@@ -152,9 +158,9 @@ h2 {
 }
 
 .card {
-    background: white;
-    border: 2px solid #e9ecef;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
     padding: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -163,40 +169,41 @@ h2 {
 
 .card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: rgba(124, 58, 237, 0.3);
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.1);
 }
 
 .card.selected {
-    border-color: #667eea;
-    background: #f0f4ff;
-    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2);
+    border-color: #7c3aed;
+    background: rgba(124, 58, 237, 0.1);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
 }
 
 .card.correct {
-    border-color: #4caf50;
-    background: #e8f5e9;
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
 }
 
 .card.incorrect {
-    border-color: #f44336;
-    background: #ffebee;
+    border-color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
 }
 
 .card.trap {
-    border-color: #ff9800;
-    background: #fff3e0;
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
 }
 
 .card-text {
     font-size: 1rem;
     margin-bottom: 8px;
-    color: #333;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .card-technique {
     display: inline-block;
     padding: 4px 10px;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -204,9 +211,9 @@ h2 {
 
 .selected-cards-container {
     min-height: 60px;
-    background: #f8f9fa;
-    border: 2px dashed #dee2e6;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
     padding: 15px;
     display: flex;
     flex-wrap: wrap;
@@ -216,15 +223,15 @@ h2 {
 
 .selected-cards-container:empty::after {
     content: "No cards selected yet...";
-    color: #adb5bd;
+    color: rgba(255, 255, 255, 0.25);
     font-style: italic;
 }
 
 .selected-card {
-    background: #667eea;
+    background: linear-gradient(135deg, #7c3aed, #06b6d4);
     color: white;
     padding: 8px 15px;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 0.9rem;
     display: flex;
     align-items: center;
@@ -232,7 +239,7 @@ h2 {
 }
 
 .selected-card-remove {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
     border: none;
     color: white;
     width: 20px;
@@ -244,7 +251,7 @@ h2 {
 }
 
 .selected-card-remove:hover {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.35);
 }
 
 .actions {
@@ -257,7 +264,7 @@ h2 {
 .btn {
     padding: 12px 30px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -265,34 +272,35 @@ h2 {
 }
 
 .btn-primary {
-    background: #667eea;
+    background: linear-gradient(135deg, #7c3aed, #06b6d4);
     color: white;
 }
 
 .btn-primary:hover {
-    background: #5568d3;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
 }
 
 .btn-secondary {
-    background: #6c757d;
-    color: white;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-secondary:hover {
-    background: #5a6268;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
 }
 
 .btn:disabled {
-    opacity: 0.5;
+    opacity: 0.4;
     cursor: not-allowed;
     transform: none;
 }
 
 .feedback {
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 12px;
     margin: 20px 0;
     font-size: 1.1rem;
     font-weight: 600;
@@ -300,33 +308,33 @@ h2 {
 }
 
 .feedback.success {
-    background: #d4edda;
-    color: #155724;
-    border: 2px solid #c3e6cb;
+    background: rgba(16, 185, 129, 0.1);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.25);
 }
 
 .feedback.error {
-    background: #f8d7da;
-    color: #721c24;
-    border: 2px solid #f5c6cb;
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.25);
 }
 
 .explanation {
-    background: #e7f3ff;
-    border: 2px solid #2196f3;
-    border-radius: 8px;
+    background: rgba(6, 182, 212, 0.06);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    border-radius: 12px;
     padding: 20px;
     margin: 20px 0;
 }
 
 .explanation h3 {
-    color: #1976d2;
+    color: #22d3ee;
     margin-bottom: 10px;
 }
 
 .explanation p {
     line-height: 1.6;
-    color: #333;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .hidden {
@@ -339,29 +347,33 @@ h2 {
 }
 
 .game-complete {
-    background: white;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
     padding: 40px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .game-complete h2 {
     font-size: 2.5rem;
-    color: #667eea;
+    background: linear-gradient(135deg, #a78bfa, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 20px;
 }
 
 .final-score {
     margin: 30px 0;
     padding: 20px;
-    background: #f0f4ff;
-    border-radius: 8px;
+    background: rgba(124, 58, 237, 0.08);
+    border: 1px solid rgba(124, 58, 237, 0.15);
+    border-radius: 12px;
 }
 
 .final-score h3 {
     font-size: 2rem;
-    color: #667eea;
+    color: #a78bfa;
 }
 
 .techniques-learned {
@@ -370,7 +382,7 @@ h2 {
 }
 
 .techniques-learned h3 {
-    color: #667eea;
+    color: #a78bfa;
     margin-bottom: 15px;
     text-align: center;
 }
@@ -384,21 +396,23 @@ h2 {
 
 .techniques-learned li {
     padding: 10px;
-    background: #f8f9fa;
-    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
     text-align: center;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 footer {
     margin-top: 30px;
-    background: white;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
     padding: 25px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer h3 {
-    color: #667eea;
+    color: #a78bfa;
     margin-bottom: 15px;
     text-align: center;
 }
@@ -418,11 +432,12 @@ footer h3 {
     align-items: center;
     gap: 8px;
     font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .badge {
     padding: 4px 10px;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -430,15 +445,15 @@ footer h3 {
     white-space: nowrap;
 }
 
-.badge.role { background: #9c27b0; }
-.badge.constraint { background: #f44336; }
-.badge.format { background: #2196f3; }
-.badge.style { background: #ff9800; }
-.badge.audience { background: #4caf50; }
-.badge.exemplar { background: #00bcd4; }
-.badge.step-by-step { background: #673ab7; }
-.badge.scope { background: #795548; }
-.badge.analogy { background: #e91e63; }
+.badge.role { background: rgba(156, 39, 176, 0.7); }
+.badge.constraint { background: rgba(239, 68, 68, 0.7); }
+.badge.format { background: rgba(6, 182, 212, 0.7); }
+.badge.style { background: rgba(245, 158, 11, 0.7); }
+.badge.audience { background: rgba(16, 185, 129, 0.7); }
+.badge.exemplar { background: rgba(6, 182, 212, 0.9); }
+.badge.step-by-step { background: rgba(124, 58, 237, 0.7); }
+.badge.scope { background: rgba(121, 85, 72, 0.8); }
+.badge.analogy { background: rgba(236, 72, 153, 0.7); }
 
 @media (max-width: 768px) {
     header h1 {
