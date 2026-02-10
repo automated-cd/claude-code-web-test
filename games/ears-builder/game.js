@@ -64,7 +64,7 @@ const modeNames = {
 };
 
 async function initGame() {
-    const response = await fetch('ears-game-data.json');
+    const response = await fetch('data.json');
     gameData = await response.json();
     totalLevelsEl.textContent = gameData.length;
     setupEventListeners();
