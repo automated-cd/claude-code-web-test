@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration Matcher - Educational Games Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="game-nav">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-link">← All Games</a>
+            <div class="nav-links">
+                <a href="../prompt-engineer/index.html" class="nav-link">Prompt Engineer</a>
+                <a href="../clone-this-app/index.html" class="nav-link">Clone This App</a>
+                <a href="../ears-builder/index.html" class="nav-link">EARS Builder</a>
+                <a href="index.html" class="nav-link active">Integration Matcher</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🔌 Integration Matcher</h1>
+            <p class="subtitle">Learn about essential tools and services by matching goals with the right integrations</p>
+            <button id="rules-button" class="btn btn-secondary">📖 Rules</button>
+        </header>
+
+        <!-- Game Info Panel -->
+        <div id="game-info" class="game-info">
+            <!-- Score panel will be populated by JS -->
+        </div>
+
+        <!-- Game Container -->
+        <div id="game-container" class="game-container">
+            <!-- Game content will be populated by JS -->
+        </div>
+
+        <!-- Feedback -->
+        <div id="feedback" class="feedback" style="display: none;"></div>
+
+        <!-- Explanation -->
+        <div id="explanation" class="explanation" style="display: none;"></div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button id="next-button" class="btn btn-primary" style="display: none;">Next Level →</button>
+        </div>
+
+        <!-- Complete Screen -->
+        <div id="complete-screen" class="complete-screen" style="display: none;">
+            <h2>🎉 Congratulations!</h2>
+            <p>You've completed all the integration matching challenges!</p>
+            <div id="final-score"></div>
+            <div class="complete-actions">
+                <a href="../../index.html" class="btn btn-primary">← Back to All Games</a>
+                <button class="btn btn-secondary" onclick="location.reload()">🔄 Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rules Modal -->
+    <div id="rules-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📖 How to Play</h2>
+                <button id="close-modal" class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>🎯 Objective</h3>
+                <p>Learn about essential tools and integrations by matching common development goals with the right services and platforms.</p>
+
+                <h3>🎮 How to Play</h3>
+                <ol>
+                    <li><strong>Read the Goal:</strong> Each level presents a specific need or goal (e.g., "Accept payments")</li>
+                    <li><strong>Review Options:</strong> Look at the available tools and services on the right</li>
+                    <li><strong>Make Your Match:</strong> Click on the tool you think best matches the goal</li>
+                    <li><strong>Submit:</strong> Click "Submit Answer" to check if you're correct</li>
+                    <li><strong>Learn:</strong> Read the explanation to understand why that tool is the right choice</li>
+                    <li><strong>Progress:</strong> Move to the next level and continue learning!</li>
+                </ol>
+
+                <h3>💡 Features</h3>
+                <ul>
+                    <li><strong>Hints Available:</strong> Click "Show Hint" if you need help (-2 points)</li>
+                    <li><strong>Detailed Explanations:</strong> Learn why certain tools are best for specific tasks</li>
+                    <li><strong>Tool Descriptions:</strong> Each tool has a brief description to help you</li>
+                    <li><strong>Multiple Valid Options:</strong> Some goals have more than one good solution!</li>
+                </ul>
+
+                <h3>🏆 Scoring</h3>
+                <ul>
+                    <li>+10 points for each correct match</li>
+                    <li>-3 points for incorrect answers</li>
+                    <li>-2 points for using hints</li>
+                </ul>
+
+                <h3>📚 What You'll Learn</h3>
+                <ul>
+                    <li>Popular tools and services for common development needs</li>
+                    <li>When to use specific integrations</li>
+                    <li>How different tools solve different problems</li>
+                    <li>The modern developer's toolkit ecosystem</li>
+                </ul>
+
+                <p><strong>Tip:</strong> Take time to read the explanations—they contain valuable insights about each tool's strengths and use cases!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
