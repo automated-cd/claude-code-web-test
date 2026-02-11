@@ -20,7 +20,7 @@ body {
     padding: 16px 24px;
     margin-bottom: 24px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    max-width: 960px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -60,7 +60,7 @@ body {
 
 /* Container */
 .container {
-    max-width: 960px;
+    max-width: 900px;
     margin: 0 auto;
     background: white;
     border-radius: 16px;
@@ -721,11 +721,11 @@ header h1 {
 }
 
 .component-label {
-    padding: 6px 12px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 8px 16px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background: #ffffff;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     font-weight: 600;
     cursor: grab;
     transition: all 0.2s ease;
@@ -1029,9 +1029,9 @@ header h1 {
 }
 
 .component-chip {
-    padding: 6px 14px;
+    padding: 8px 16px;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     font-weight: 600;
     color: white;
 }
