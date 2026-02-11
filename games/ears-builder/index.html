@@ -7,26 +7,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <nav class="game-nav">
-            <a href="../prompt-engineer/index.html">Prompt Engineer's Toolkit</a>
-            <span class="nav-divider">|</span>
-            <a href="../clone-this-app/index.html">Clone This App</a>
-            <span class="nav-divider">|</span>
-            <a href="../ears-builder/index.html" class="active">EARS Requirements Builder</a>
-        </nav>
+    <!-- Navigation -->
+    <nav class="game-nav">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-link">← All Games</a>
+            <div class="nav-links">
+                <a href="../prompt-engineer/index.html" class="nav-link">Prompt Engineer</a>
+                <a href="../clone-this-app/index.html" class="nav-link">Clone This App</a>
+                <a href="../ears-builder/index.html" class="nav-link active">EARS Builder</a>
+                <a href="../integration-matcher/index.html" class="nav-link">Integration Matcher</a>
+            </div>
+        </div>
+    </nav>
 
+    <div class="container">
         <header>
             <h1>EARS Requirements Builder</h1>
             <p class="subtitle">Master the EARS notation by assembling proper requirements from component pieces</p>
-            <button id="rules-btn" class="rules-btn" aria-label="Show Rules">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="16" x2="12" y2="12"></line>
-                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg>
-                Rules
-            </button>
+            <button id="rules-btn" class="btn btn-secondary">📖 Rules</button>
         </header>
 
         <div class="game-info">
@@ -132,7 +130,10 @@
             <div id="patterns-mastered" class="patterns-mastered">
                 <h3>Patterns Mastered</h3>
             </div>
-            <button id="restart-btn" class="btn btn-primary">Play Again</button>
+            <div class="complete-actions">
+                <a href="../../index.html" class="btn btn-primary">← Back to All Games</a>
+                <button id="restart-btn" class="btn btn-secondary">🔄 Play Again</button>
+            </div>
         </div>
 
         <footer>

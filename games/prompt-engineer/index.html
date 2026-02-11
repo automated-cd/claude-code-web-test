@@ -7,26 +7,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <nav class="game-nav">
-            <a href="../prompt-engineer/index.html" class="active">Prompt Engineer's Toolkit</a>
-            <span class="nav-divider">|</span>
-            <a href="../clone-this-app/index.html">Clone This App</a>
-            <span class="nav-divider">|</span>
-            <a href="../ears-builder/index.html">EARS Requirements Builder</a>
-        </nav>
+    <!-- Navigation -->
+    <nav class="game-nav">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-link">← All Games</a>
+            <div class="nav-links">
+                <a href="../prompt-engineer/index.html" class="nav-link active">Prompt Engineer</a>
+                <a href="../clone-this-app/index.html" class="nav-link">Clone This App</a>
+                <a href="../ears-builder/index.html" class="nav-link">EARS Builder</a>
+                <a href="../integration-matcher/index.html" class="nav-link">Integration Matcher</a>
+            </div>
+        </div>
+    </nav>
 
+    <div class="container">
         <header>
             <h1>🎯 The Prompt Engineer's Toolkit</h1>
             <p class="subtitle">Master the art of crafting effective prompts by combining the right techniques</p>
-            <button id="rules-btn" class="rules-btn" aria-label="Show Rules">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="16" x2="12" y2="12"></line>
-                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg>
-                Rules
-            </button>
+            <button id="rules-btn" class="btn btn-secondary">📖 Rules</button>
         </header>
 
         <div class="game-info">
@@ -89,7 +87,10 @@
                 <h3>Techniques Mastered:</h3>
                 <ul id="techniques-list"></ul>
             </div>
-            <button id="restart-btn" class="btn btn-primary">Play Again</button>
+            <div class="complete-actions">
+                <a href="../../index.html" class="btn btn-primary">← Back to All Games</a>
+                <button id="restart-btn" class="btn btn-secondary">🔄 Play Again</button>
+            </div>
         </div>
 
         <footer>
