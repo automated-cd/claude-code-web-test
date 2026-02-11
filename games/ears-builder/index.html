@@ -7,50 +7,47 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <nav class="game-nav">
-            <a href="../prompt-engineer/index.html">Prompt Engineer's Toolkit</a>
-            <span class="nav-divider">|</span>
-            <a href="../clone-this-app/index.html">Clone This App</a>
-            <span class="nav-divider">|</span>
-            <a href="../ears-builder/index.html" class="active">EARS Requirements Builder</a>
-        </nav>
+    <!-- Navigation -->
+    <nav class="game-nav">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-link">← All Games</a>
+            <div class="nav-links">
+                <a href="../prompt-engineer/index.html" class="nav-link">Prompt Engineer</a>
+                <a href="../clone-this-app/index.html" class="nav-link">Clone This App</a>
+                <a href="../ears-builder/index.html" class="nav-link active">EARS Builder</a>
+                <a href="../integration-matcher/index.html" class="nav-link">Integration Matcher</a>
+            </div>
+        </div>
+    </nav>
 
+    <div class="container">
         <header>
             <h1>EARS Requirements Builder</h1>
             <p class="subtitle">Master the EARS notation by assembling proper requirements from component pieces</p>
-            <button id="rules-btn" class="rules-btn" aria-label="Show Rules">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="16" x2="12" y2="12"></line>
-                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg>
-                Rules
-            </button>
+            <button id="rules-btn" class="btn btn-secondary">📖 Rules</button>
         </header>
 
         <div class="game-info">
             <div class="score-panel">
-                <div class="score-item">
-                    <span class="label">Level:</span>
-                    <span id="current-level" class="value">1</span>
-                    <span class="label">/ <span id="total-levels">20</span></span>
+                <div class="stat">
+                    <span class="stat-label">Level</span>
+                    <span class="stat-value"><span id="current-level">1</span> / <span id="total-levels">20</span></span>
                 </div>
-                <div class="score-item">
-                    <span class="label">Score:</span>
-                    <span id="score" class="value">0</span>
+                <div class="stat">
+                    <span class="stat-label">Score</span>
+                    <span class="stat-value" id="score">0</span>
                 </div>
-                <div class="score-item">
-                    <span class="label">Difficulty:</span>
-                    <span id="difficulty" class="value difficulty-badge beginner">Beginner</span>
+                <div class="stat">
+                    <span class="stat-label">Difficulty</span>
+                    <span class="stat-value"><span id="difficulty" class="difficulty-badge beginner">Beginner</span></span>
                 </div>
-                <div class="score-item">
-                    <span class="label">Mode:</span>
-                    <span id="mode" class="value mode-badge guided">Guided</span>
+                <div class="stat">
+                    <span class="stat-label">Mode</span>
+                    <span class="stat-value"><span id="mode" class="mode-badge guided">Guided</span></span>
                 </div>
-                <div class="score-item">
-                    <span class="label">Stars:</span>
-                    <span id="stars" class="stars-display"></span>
+                <div class="stat">
+                    <span class="stat-label">Stars</span>
+                    <span class="stat-value"><span id="stars" class="stars-display"></span></span>
                 </div>
             </div>
             <div class="progress-bar">
@@ -122,7 +119,7 @@
         </div>
 
         <!-- Game Complete -->
-        <div id="game-complete" class="game-complete hidden">
+        <div id="game-complete" class="complete-screen hidden">
             <h2>Requirements Assembly Complete!</h2>
             <p>You've mastered all 20 levels of EARS requirements building!</p>
             <div class="final-score">
@@ -132,10 +129,13 @@
             <div id="patterns-mastered" class="patterns-mastered">
                 <h3>Patterns Mastered</h3>
             </div>
-            <button id="restart-btn" class="btn btn-primary">Play Again</button>
+            <div class="complete-actions">
+                <a href="../../index.html" class="btn btn-primary">← Back to All Games</a>
+                <button id="restart-btn" class="btn btn-secondary" onclick="location.reload()">🔄 Play Again</button>
+            </div>
         </div>
 
-        <footer>
+        <div class="footer-legend">
             <div class="pattern-legend">
                 <h3>EARS Pattern Reference</h3>
                 <div class="legend-grid">
@@ -146,15 +146,15 @@
                     <span class="legend-item"><span class="badge pattern-optional">Optional</span> WHERE [feature], the [system] shall [action]</span>
                 </div>
             </div>
-        </footer>
+        </div>
     </div>
 
     <!-- Rules Modal -->
-    <div id="rules-modal" class="modal hidden">
+    <div id="rules-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>How to Play</h2>
-                <button id="close-modal" class="close-btn" aria-label="Close">&times;</button>
+                <h2>📖 How to Play</h2>
+                <button id="close-modal" class="close-button">&times;</button>
             </div>
             <div class="modal-body">
                 <h3>Objective</h3>
