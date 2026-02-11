@@ -19,6 +19,14 @@
         <header>
             <h1>Clone This App</h1>
             <p class="subtitle">Reverse-engineer apps by identifying their UI components</p>
+            <button id="rules-btn" class="rules-btn" aria-label="Show Rules">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                Rules
+            </button>
         </header>
 
         <div class="game-info">
@@ -105,6 +113,49 @@
                 </div>
             </div>
         </footer>
+    </div>
+
+    <!-- Rules Modal -->
+    <div id="rules-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>How to Play</h2>
+                <button id="close-modal" class="close-btn" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>Objective</h3>
+                <p>Learn to identify UI components by analyzing real app interfaces and matching numbered zones to their component types.</p>
+
+                <h3>How It Works</h3>
+                <ol>
+                    <li><strong>Study the App Preview:</strong> Each numbered zone highlights a specific UI element in the mockup.</li>
+                    <li><strong>Identify Components:</strong> Figure out what type of component each zone represents (Image, Text label, Icon button, etc.).</li>
+                    <li><strong>Assign Labels:</strong> You can either:
+                        <ul>
+                            <li>Drag a component label onto a zone</li>
+                            <li>Click a zone, then click a component label</li>
+                        </ul>
+                    </li>
+                    <li><strong>Review Your Assignments:</strong> Check the "Your Assignments" section to see your current matches.</li>
+                    <li><strong>Submit:</strong> Once all zones are assigned, the "Check Answer" button will activate. Submit to see your results!</li>
+                </ol>
+
+                <h3>Scoring</h3>
+                <ul>
+                    <li>+10 points for each correct component match</li>
+                    <li>Difficulty increases with each challenge</li>
+                    <li>Try to get a perfect score on each interface!</li>
+                </ul>
+
+                <h3>Tips</h3>
+                <ul>
+                    <li>Look for visual clues: clickable elements, static text, dynamic data</li>
+                    <li>Consider functionality: What would this element do in the real app?</li>
+                    <li>Use the component reference at the bottom for definitions</li>
+                    <li>Reset button clears all assignments if you want to start over</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <script src="game.js"></script>
