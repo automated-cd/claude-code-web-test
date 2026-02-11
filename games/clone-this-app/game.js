@@ -686,13 +686,11 @@ document.addEventListener('click', function (e) {
 
 // Modal functions
 function openRulesModal() {
-    rulesModal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
+    rulesModal.style.display = 'flex';
 }
 
 function closeRulesModal() {
-    rulesModal.classList.add('hidden');
-    document.body.style.overflow = '';
+    rulesModal.style.display = 'none';
 }
 
 rulesBtn.addEventListener('click', openRulesModal);
@@ -707,7 +705,7 @@ rulesModal.addEventListener('click', (e) => {
 
 // Close modal with Escape key
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !rulesModal.classList.contains('hidden')) {
+    if (e.key === 'Escape' && rulesModal.style.display === 'flex') {
         closeRulesModal();
     }
 });
