@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "goal": "Accept payments",
+    "difficulty": "Beginner",
+    "description": "Your e-commerce app needs to process credit card payments securely.",
+    "correctTool": "Stripe",
+    "availableTools": [
+      "Stripe",
+      "SendGrid",
+      "MongoDB",
+      "PayPal",
+      "Twilio",
+      "Square"
+    ],
+    "explanation": "<strong>Stripe</strong> is the correct answer. Stripe is a complete payment processing platform that handles credit cards, digital wallets, and other payment methods. It's developer-friendly with extensive APIs and handles PCI compliance for you. <br><br><strong>Other valid options:</strong> PayPal and Square are also payment processors, but Stripe is the most popular choice for developers due to its comprehensive API.",
+    "toolDescriptions": {
+      "Stripe": "Payment processing platform",
+      "SendGrid": "Email delivery service",
+      "MongoDB": "Database",
+      "PayPal": "Payment processor",
+      "Twilio": "SMS and communication",
+      "Square": "Point-of-sale and payments"
+    }
+  },
+  {
+    "id": 2,
+    "goal": "Send emails",
+    "difficulty": "Beginner",
+    "description": "Your application needs to send transactional emails (password resets, notifications) and marketing campaigns.",
+    "correctTool": "SendGrid",
+    "availableTools": [
+      "SendGrid",
+      "Mailchimp",
+      "Stripe",
+      "Firebase",
+      "Slack",
+      "Twilio SendGrid"
+    ],
+    "explanation": "<strong>SendGrid</strong> is the correct answer. SendGrid (now Twilio SendGrid) specializes in email delivery with excellent deliverability rates, templates, and analytics. It handles both transactional and marketing emails.<br><br><strong>Mailchimp</strong> is also a great choice, especially for marketing emails and newsletters. For transactional emails, SendGrid is typically preferred due to its developer-friendly API.",
+    "toolDescriptions": {
+      "SendGrid": "Email delivery and marketing",
+      "Mailchimp": "Email marketing platform",
+      "Stripe": "Payment processing",
+      "Firebase": "Backend platform",
+      "Slack": "Team communication",
+      "Twilio SendGrid": "Email delivery service"
+    }
+  },
+  {
+    "id": 3,
+    "goal": "Store files",
+    "difficulty": "Beginner",
+    "description": "Your app allows users to upload and share documents, images, and videos.",
+    "correctTool": "Google Drive",
+    "availableTools": [
+      "Google Drive",
+      "Dropbox",
+      "GitHub",
+      "MongoDB",
+      "AWS S3",
+      "Redis"
+    ],
+    "explanation": "<strong>Google Drive</strong> is the correct answer. Google Drive provides cloud storage with easy sharing, collaboration features, and generous free storage. Its API allows apps to store and retrieve files.<br><br><strong>Other valid options:</strong> Dropbox is another excellent file storage service with similar features. AWS S3 is also widely used for file storage, especially for large-scale applications, though it's more infrastructure-focused than Drive/Dropbox.",
+    "toolDescriptions": {
+      "Google Drive": "Cloud file storage and sharing",
+      "Dropbox": "Cloud file storage",
+      "GitHub": "Code repository",
+      "MongoDB": "Database",
+      "AWS S3": "Object storage service",
+      "Redis": "In-memory data store"
+    }
+  },
+  {
+    "id": 4,
+    "goal": "Authenticate users",
+    "difficulty": "Intermediate",
+    "description": "Your app needs secure user login with options for social sign-in and multi-factor authentication.",
+    "correctTool": "Auth0",
+    "availableTools": [
+      "Auth0",
+      "Google Login",
+      "Firebase Auth",
+      "Stripe",
+      "JWT",
+      "OAuth 2.0"
+    ],
+    "explanation": "<strong>Auth0</strong> is the correct answer. Auth0 is a comprehensive authentication and authorization platform that supports multiple login methods (social, email/password, passwordless), MFA, and enterprise features. It handles security best practices for you.<br><br><strong>Other valid options:</strong> Google Login (OAuth) is great for social sign-in, Firebase Auth provides similar features to Auth0, and JWT/OAuth 2.0 are protocols you'd implement yourself rather than services.",
+    "toolDescriptions": {
+      "Auth0": "Authentication and authorization platform",
+      "Google Login": "Social authentication via Google",
+      "Firebase Auth": "Authentication service",
+      "Stripe": "Payment processing",
+      "JWT": "Authentication token standard",
+      "OAuth 2.0": "Authorization protocol"
+    }
+  },
+  {
+    "id": 5,
+    "goal": "Schedule meetings",
+    "difficulty": "Beginner",
+    "description": "Your application needs to let users book appointments and schedule meetings with automatic calendar integration.",
+    "correctTool": "Calendly",
+    "availableTools": [
+      "Calendly",
+      "Google Calendar",
+      "Slack",
+      "Zoom",
+      "Microsoft Bookings",
+      "Doodle"
+    ],
+    "explanation": "<strong>Calendly</strong> is the correct answer. Calendly is specifically designed for scheduling and booking meetings. It integrates with your calendar, handles availability, sends reminders, and provides a simple booking page for clients.<br><br><strong>Other valid options:</strong> Microsoft Bookings and Doodle also offer scheduling features. Google Calendar API can be used but requires more custom development. Zoom is for video calls, not scheduling.",
+    "toolDescriptions": {
+      "Calendly": "Scheduling and booking platform",
+      "Google Calendar": "Calendar service",
+      "Slack": "Team communication",
+      "Zoom": "Video conferencing",
+      "Microsoft Bookings": "Appointment scheduling",
+      "Doodle": "Meeting scheduling polls"
+    }
+  },
+  {
+    "id": 6,
+    "goal": "Collect data",
+    "difficulty": "Beginner",
+    "description": "Your project needs to collect form responses, survey data, and organize it in a structured, accessible way.",
+    "correctTool": "Airtable",
+    "availableTools": [
+      "Airtable",
+      "Google Sheets",
+      "Typeform",
+      "MongoDB",
+      "PostgreSQL",
+      "Excel"
+    ],
+    "explanation": "<strong>Airtable</strong> is the correct answer. Airtable combines the simplicity of spreadsheets with database features, making it perfect for collecting and organizing data. It offers forms, API access, and rich field types (attachments, links, etc.).<br><br><strong>Other valid options:</strong> Google Sheets is also excellent for data collection with forms and API access. Typeform specializes in beautiful forms. MongoDB/PostgreSQL are databases that require more technical setup.",
+    "toolDescriptions": {
+      "Airtable": "Spreadsheet-database hybrid",
+      "Google Sheets": "Cloud spreadsheet with forms",
+      "Typeform": "Online form builder",
+      "MongoDB": "NoSQL database",
+      "PostgreSQL": "Relational database",
+      "Excel": "Spreadsheet software"
+    }
+  }
+]
