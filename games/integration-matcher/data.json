@@ -51,7 +51,7 @@
     "id": 3,
     "goal": "Store files",
     "difficulty": "Beginner",
-    "description": "Your app allows users to upload and share documents, images, and videos.",
+    "description": "Your app allows users to upload and share documents, images, and videos with collaborators.",
     "correctTool": "Google Drive",
     "availableTools": [
       "Google Drive",
@@ -73,6 +73,30 @@
   },
   {
     "id": 4,
+    "goal": "Send SMS notifications",
+    "difficulty": "Beginner",
+    "description": "Your app needs to send text message alerts to users for order updates, two-factor authentication codes, and delivery notifications.",
+    "correctTool": "Twilio",
+    "availableTools": [
+      "Twilio",
+      "SendGrid",
+      "Slack",
+      "Firebase Cloud Messaging",
+      "Mailchimp",
+      "Vonage"
+    ],
+    "explanation": "<strong>Twilio</strong> is the correct answer. Twilio is the leading cloud communications platform for sending SMS, MMS, and voice calls programmatically. Its APIs are widely used for two-factor authentication, order updates, and alerts.<br><br><strong>Other valid options:</strong> Vonage (formerly Nexmo) offers similar SMS capabilities. Firebase Cloud Messaging handles push notifications but not SMS. SendGrid and Mailchimp are for email, not text messages.",
+    "toolDescriptions": {
+      "Twilio": "SMS, voice, and communication APIs",
+      "SendGrid": "Email delivery service",
+      "Slack": "Team communication platform",
+      "Firebase Cloud Messaging": "Push notification service",
+      "Mailchimp": "Email marketing platform",
+      "Vonage": "Communication APIs (SMS and voice)"
+    }
+  },
+  {
+    "id": 5,
     "goal": "Authenticate users",
     "difficulty": "Intermediate",
     "description": "Your app needs secure user login with options for social sign-in and multi-factor authentication.",
@@ -96,9 +120,9 @@
     }
   },
   {
-    "id": 5,
+    "id": 6,
     "goal": "Schedule meetings",
-    "difficulty": "Beginner",
+    "difficulty": "Intermediate",
     "description": "Your application needs to let users book appointments and schedule meetings with automatic calendar integration.",
     "correctTool": "Calendly",
     "availableTools": [
@@ -120,9 +144,9 @@
     }
   },
   {
-    "id": 6,
+    "id": 7,
     "goal": "Collect data",
-    "difficulty": "Beginner",
+    "difficulty": "Intermediate",
     "description": "Your project needs to collect form responses, survey data, and organize it in a structured, accessible way.",
     "correctTool": "Airtable",
     "availableTools": [
@@ -141,6 +165,78 @@
       "MongoDB": "NoSQL database",
       "PostgreSQL": "Relational database",
       "Excel": "Spreadsheet software"
+    }
+  },
+  {
+    "id": 8,
+    "goal": "Track user behavior",
+    "difficulty": "Intermediate",
+    "description": "You need to understand how users interact with your web app — which pages they visit, which buttons they click, and where they drop off in the conversion funnel.",
+    "correctTool": "Mixpanel",
+    "availableTools": [
+      "Mixpanel",
+      "Google Analytics",
+      "Sentry",
+      "Hotjar",
+      "Datadog",
+      "Segment"
+    ],
+    "explanation": "<strong>Mixpanel</strong> is the correct answer. Mixpanel is a product analytics platform built for tracking user events, building funnels, and understanding user behavior patterns. It excels at event-based tracking with powerful segmentation and retention analysis.<br><br><strong>Other valid options:</strong> Google Analytics tracks page views and sessions well. Hotjar provides heatmaps and session recordings. Segment is a data pipeline that routes events to analytics tools (including Mixpanel). Sentry and Datadog are for error tracking and infrastructure monitoring, not user behavior.",
+    "toolDescriptions": {
+      "Mixpanel": "Product analytics and user tracking",
+      "Google Analytics": "Web traffic analytics",
+      "Sentry": "Error monitoring and tracking",
+      "Hotjar": "Heatmaps and session recordings",
+      "Datadog": "Infrastructure monitoring",
+      "Segment": "Customer data platform"
+    }
+  },
+  {
+    "id": 9,
+    "goal": "Automate workflows",
+    "difficulty": "Advanced",
+    "description": "Your team needs to connect multiple apps together — when a new customer signs up, automatically add them to a CRM, send a welcome email, and create a task in your project management tool.",
+    "correctTool": "Zapier",
+    "availableTools": [
+      "Zapier",
+      "Slack",
+      "IFTTT",
+      "GitHub Actions",
+      "Jira",
+      "Make (Integromat)"
+    ],
+    "explanation": "<strong>Zapier</strong> is the correct answer. Zapier connects over 6,000 apps and automates workflows (called 'Zaps') without writing code. It specializes in cross-app automation — when something happens in one app, trigger actions in others. It's ideal for business workflow automation.<br><br><strong>Other valid options:</strong> Make (formerly Integromat) offers similar capabilities with more complex workflow logic. IFTTT is simpler and more consumer-focused. GitHub Actions is for CI/CD pipelines, not business workflow automation. Jira and Slack are individual tools, not automation platforms.",
+    "toolDescriptions": {
+      "Zapier": "No-code workflow automation platform",
+      "Slack": "Team communication platform",
+      "IFTTT": "Simple app automation",
+      "GitHub Actions": "CI/CD pipeline tool",
+      "Jira": "Project management tool",
+      "Make (Integromat)": "Advanced workflow automation"
+    }
+  },
+  {
+    "id": 10,
+    "goal": "Monitor errors in production",
+    "difficulty": "Advanced",
+    "description": "Your deployed web application needs real-time error tracking — you want to catch JavaScript exceptions, API failures, and performance issues before users report them, with stack traces and user context.",
+    "correctTool": "Sentry",
+    "availableTools": [
+      "Sentry",
+      "Datadog",
+      "New Relic",
+      "LogRocket",
+      "Google Analytics",
+      "PagerDuty"
+    ],
+    "explanation": "<strong>Sentry</strong> is the correct answer. Sentry is the leading application error monitoring platform. It captures unhandled exceptions with full stack traces, release tracking, and user context. It supports JavaScript, Python, and most major languages with minimal setup.<br><br><strong>Other valid options:</strong> Datadog and New Relic offer broader observability (infrastructure + APM + errors) but are more complex. LogRocket provides session replay alongside error tracking. Google Analytics tracks traffic, not errors. PagerDuty is for incident alerting, not error capture.",
+    "toolDescriptions": {
+      "Sentry": "Application error monitoring",
+      "Datadog": "Full-stack observability platform",
+      "New Relic": "Application performance monitoring",
+      "LogRocket": "Session replay and error tracking",
+      "Google Analytics": "Web traffic analytics",
+      "PagerDuty": "Incident response and alerting"
     }
   }
 ]

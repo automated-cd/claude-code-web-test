@@ -33,6 +33,22 @@
   },
   {
     "id": 3,
+    "basePrompt": "Write a cover letter for a job application.",
+    "targetText": "**Role:** Career counselor with hiring experience. **Task:** Write a cover letter for a junior software developer position. **Audience:** Hiring managers at tech startups. **Style:** Professional but personable. **Constraint:** Keep it to one page.",
+    "cards": [
+      { "text": "Act as a career counselor with hiring experience", "technique": "Role", "isTrap": false },
+      { "text": "Target hiring managers at tech startups", "technique": "Audience", "isTrap": false },
+      { "text": "Use a professional but personable tone", "technique": "Style", "isTrap": false },
+      { "text": "Keep it to one page", "technique": "Constraint", "isTrap": false },
+      { "text": "Include a full autobiography of the applicant", "technique": "Scope", "isTrap": true },
+      { "text": "Write it as a rhyming poem", "technique": "Format", "isTrap": true },
+      { "text": "Use overly casual slang throughout", "technique": "Style", "isTrap": true }
+    ],
+    "solution": [0, 1, 2, 3],
+    "explanation": "This prompt uses **Role** (career counselor), **Audience** (hiring managers), **Style** (professional yet personable), and **Constraint** (one page). Traps include **Scope** creep (autobiography), inappropriate **Format** (poem), and mismatched **Style** (casual slang)."
+  },
+  {
+    "id": 4,
     "basePrompt": "Describe a database query.",
     "targetText": "**Role:** Senior database architect. **Task:** Write a SQL query to find all users who registered in the last 30 days and made at least one purchase. **Format:** Provide commented SQL code. **Step-by-Step:** Explain your reasoning for each JOIN and WHERE clause.",
     "cards": [
@@ -48,7 +64,7 @@
     "explanation": "This technical prompt requires **Role** (database expert), **Format** (commented code), and **Step-by-Step** reasoning. Traps include mismatched formats (poetry), wrong technology (NoSQL), scope creep (security), and inappropriate tone (mysterious)."
   },
   {
-    "id": 4,
+    "id": 5,
     "basePrompt": "Write a product description.",
     "targetText": "**Role:** E-commerce copywriter. **Task:** Write a product description for wireless headphones. **Audience:** Tech-savvy millennials. **Style:** Conversational and trendy. **Format:** 3 bullet points highlighting key features, followed by a call-to-action. **Constraint:** Maximum 100 words.",
     "cards": [
@@ -65,20 +81,60 @@
     "explanation": "This marketing prompt needs **Role**, **Audience**, **Style**, **Format**, and **Constraint**. Traps include conflicting style (formal academic), wrong audience (engineers), and scope creep (comparing many products)."
   },
   {
-    "id": 5,
-    "basePrompt": "Explain machine learning.",
-    "targetText": "**Role:** AI educator. **Task:** Explain supervised learning using a real-world example. **Audience:** High school students with no coding experience. **Exemplar:** Similar to how you'd explain 'teaching a dog tricks with treats as rewards.' **Constraint:** No code or mathematical formulas. **Format:** 2-3 short paragraphs.",
+    "id": 6,
+    "basePrompt": "Write a tutorial about git version control.",
+    "targetText": "**Role:** Senior DevOps engineer and mentor. **Task:** Create a beginner's guide to git branching and merging. **Audience:** Junior developers who know basic terminal commands. **Format:** Step-by-step tutorial with code blocks for each command. **Exemplar:** Similar to how the official GitHub docs explain 'Hello World' with a walkthrough. **Constraint:** Cover only branching and merging, not rebasing or advanced topics.",
     "cards": [
-      { "text": "Act as an AI educator", "technique": "Role", "isTrap": false },
-      { "text": "Target high school students with no coding experience", "technique": "Audience", "isTrap": false },
-      { "text": "Use an analogy like teaching a dog tricks", "technique": "Exemplar", "isTrap": false },
-      { "text": "Avoid code or mathematical formulas", "technique": "Constraint", "isTrap": false },
-      { "text": "Format as 2-3 short paragraphs", "technique": "Format", "isTrap": false },
-      { "text": "Include advanced calculus equations", "technique": "Constraint", "isTrap": true },
-      { "text": "Target PhD researchers in neural networks", "technique": "Audience", "isTrap": true },
-      { "text": "Write it as a haiku", "technique": "Format", "isTrap": true }
+      { "text": "Act as a senior DevOps engineer and mentor", "technique": "Role", "isTrap": false },
+      { "text": "Target junior developers with basic terminal knowledge", "technique": "Audience", "isTrap": false },
+      { "text": "Use step-by-step tutorial format with code blocks", "technique": "Format", "isTrap": false },
+      { "text": "Follow the style of GitHub's 'Hello World' walkthrough", "technique": "Exemplar", "isTrap": false },
+      { "text": "Cover only branching and merging, not rebasing", "technique": "Constraint", "isTrap": false },
+      { "text": "Include a deep dive into git internals and SHA hashes", "technique": "Scope", "isTrap": true },
+      { "text": "Write it as a fictional story with characters", "technique": "Style", "isTrap": true },
+      { "text": "Target experienced kernel developers", "technique": "Audience", "isTrap": true },
+      { "text": "Summarize the entire git documentation", "technique": "Scope", "isTrap": true }
     ],
     "solution": [0, 1, 2, 3, 4],
-    "explanation": "This educational prompt needs **Role**, **Audience**, **Exemplar** (analogy), **Constraint** (no code), and **Format**. Traps include contradictory constraints (calculus), wrong audience (PhD), and unsuitable format (haiku)."
+    "explanation": "This tutorial prompt needs **Role** (DevOps mentor), **Audience** (junior devs), **Format** (step-by-step with code), **Exemplar** (GitHub style), and **Constraint** (scope limit). Traps include scope creep (git internals, full docs), mismatched audience (kernel devs), and inappropriate style (fiction)."
+  },
+  {
+    "id": 7,
+    "basePrompt": "Write a meal plan for someone trying to eat healthier.",
+    "targetText": "**Role:** Registered dietitian. **Task:** Create a 7-day meal plan for someone transitioning to a Mediterranean diet. **Audience:** Busy professionals with limited cooking experience. **Format:** Daily table with breakfast, lunch, dinner, and one snack. **Style:** Encouraging and non-judgmental. **Constraint:** Each meal must be preparable in under 30 minutes. **Exemplar:** Similar to the structured format used by the Mayo Clinic's online meal planners.",
+    "cards": [
+      { "text": "Act as a registered dietitian", "technique": "Role", "isTrap": false },
+      { "text": "Target busy professionals with limited cooking skills", "technique": "Audience", "isTrap": false },
+      { "text": "Present as a daily table with breakfast, lunch, dinner, and a snack", "technique": "Format", "isTrap": false },
+      { "text": "Use an encouraging and non-judgmental tone", "technique": "Style", "isTrap": false },
+      { "text": "Each meal must take under 30 minutes to prepare", "technique": "Constraint", "isTrap": false },
+      { "text": "Follow the structured format of Mayo Clinic's meal planners", "technique": "Exemplar", "isTrap": false },
+      { "text": "Include detailed macronutrient breakdowns for bodybuilders", "technique": "Audience", "isTrap": true },
+      { "text": "List every possible food allergy and substitution", "technique": "Scope", "isTrap": true },
+      { "text": "Write each recipe as a haiku", "technique": "Format", "isTrap": true },
+      { "text": "Use aggressive motivational boot-camp language", "technique": "Style", "isTrap": true }
+    ],
+    "solution": [0, 1, 2, 3, 4, 5],
+    "explanation": "This comprehensive prompt uses **Role** (dietitian), **Audience** (busy professionals), **Format** (daily table), **Style** (encouraging), **Constraint** (30-min prep), and **Exemplar** (Mayo Clinic format). Traps include wrong audience (bodybuilders), scope creep (all allergies), mismatched format (haiku), and wrong tone (boot-camp)."
+  },
+  {
+    "id": 8,
+    "basePrompt": "Explain a complex scientific concept.",
+    "targetText": "**Role:** Science communicator with a physics PhD. **Task:** Explain quantum entanglement to a general audience. **Audience:** Curious adults with no physics background. **Style:** Warm, conversational, with a sense of wonder. **Format:** Start with a relatable analogy, then 3 short paragraphs building from simple to complex. **Exemplar:** Adopt the explanatory style of Carl Sagan's 'Cosmos' — blending poetic language with scientific accuracy. **Constraint:** No equations or technical notation. **Step-by-Step:** Walk through the concept progressively — first what it is, then how it works, then why it matters.",
+    "cards": [
+      { "text": "Act as a science communicator with a physics PhD", "technique": "Role", "isTrap": false },
+      { "text": "Target curious adults with no physics background", "technique": "Audience", "isTrap": false },
+      { "text": "Use a warm, conversational tone with a sense of wonder", "technique": "Style", "isTrap": false },
+      { "text": "Start with an analogy, then 3 paragraphs from simple to complex", "technique": "Format", "isTrap": false },
+      { "text": "Adopt Carl Sagan's 'Cosmos' explanatory style", "technique": "Exemplar", "isTrap": false },
+      { "text": "No equations or technical notation", "technique": "Constraint", "isTrap": false },
+      { "text": "Walk through progressively: what, how, then why it matters", "technique": "Step-by-Step", "isTrap": false },
+      { "text": "Include all the relevant Schrödinger equations", "technique": "Constraint", "isTrap": true },
+      { "text": "Write for graduate physics students", "technique": "Audience", "isTrap": true },
+      { "text": "Present as a bulleted list of raw facts", "technique": "Format", "isTrap": true },
+      { "text": "Cover every interpretation of quantum mechanics", "technique": "Scope", "isTrap": true }
+    ],
+    "solution": [0, 1, 2, 3, 4, 5, 6],
+    "explanation": "This masterclass prompt uses all seven techniques: **Role** (PhD communicator), **Audience** (curious adults), **Style** (warm/wonder), **Format** (analogy + paragraphs), **Exemplar** (Carl Sagan), **Constraint** (no equations), and **Step-by-Step** (progressive explanation). Traps directly contradict the target with equations, wrong audience, poor format, and scope creep."
   }
 ]

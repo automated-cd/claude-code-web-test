@@ -51,6 +51,30 @@
   },
   {
     "id": 3,
+    "appName": "Music Player (Spotify)",
+    "difficulty": "Beginner",
+    "description": "Identify the components that make up a music player interface",
+    "zones": [
+      { "id": "zone-1", "label": "Album Artwork", "correctComponent": "Image component" },
+      { "id": "zone-2", "label": "Song Title", "correctComponent": "Text label" },
+      { "id": "zone-3", "label": "Play / Pause Button", "correctComponent": "Icon button" },
+      { "id": "zone-4", "label": "Progress Bar", "correctComponent": "Slider" },
+      { "id": "zone-5", "label": "Current Time / Duration", "correctComponent": "Text with formula" }
+    ],
+    "availableComponents": [
+      "Image component",
+      "Text label",
+      "Icon button",
+      "Slider",
+      "Text with formula",
+      "Video player",
+      "Checkbox",
+      "Dropdown menu"
+    ],
+    "explanation": "A music player uses an <strong>Image component</strong> for album art, a <strong>Text label</strong> for the song title, <strong>Icon buttons</strong> for play/pause/skip controls, a <strong>Slider</strong> for the seekable progress bar, and <strong>Text with formula</strong> for the dynamically updating time display (e.g., '1:23 / 3:45')."
+  },
+  {
+    "id": 4,
     "appName": "Weather App",
     "difficulty": "Intermediate",
     "description": "Analyze the components of a weather forecast widget",
@@ -74,7 +98,7 @@
     "explanation": "A weather app widget uses a <strong>Text label</strong> for the city name (static display), <strong>Text with formula</strong> for the temperature (computed from API data and unit conversion) and last updated time, an <strong>Image component</strong> for the weather condition icon, and a <strong>Repeating group</strong> for the forecast row (each day repeats the same structure: day, icon, temperature)."
   },
   {
-    "id": 4,
+    "id": 5,
     "appName": "Chat App (WhatsApp)",
     "difficulty": "Intermediate",
     "description": "Identify components in a chat messaging interface",
@@ -100,7 +124,33 @@
     "explanation": "A chat interface uses an <strong>Image component</strong> for the contact avatar, a <strong>Text label</strong> for the contact name, a <strong>Repeating group</strong> for the message list (each message is a repeated item with the same structure), an <strong>Input field</strong> for typing messages, an <strong>Icon button</strong> for sending, and <strong>Text with formula</strong> for timestamps (formatted relative to current time)."
   },
   {
-    "id": 5,
+    "id": 6,
+    "appName": "Google Maps Location Card",
+    "difficulty": "Intermediate",
+    "description": "Break down the UI of a location details panel in a maps app",
+    "zones": [
+      { "id": "zone-1", "label": "Map View", "correctComponent": "Map component" },
+      { "id": "zone-2", "label": "Location Name", "correctComponent": "Text label" },
+      { "id": "zone-3", "label": "Star Rating", "correctComponent": "Rating component" },
+      { "id": "zone-4", "label": "Directions Button", "correctComponent": "Action button" },
+      { "id": "zone-5", "label": "Photo Gallery", "correctComponent": "Repeating group" },
+      { "id": "zone-6", "label": "Distance from You", "correctComponent": "Text with formula" }
+    ],
+    "availableComponents": [
+      "Map component",
+      "Text label",
+      "Rating component",
+      "Action button",
+      "Repeating group",
+      "Text with formula",
+      "Image component",
+      "Toggle switch",
+      "Input field"
+    ],
+    "explanation": "A maps location card uses a <strong>Map component</strong> for the interactive map view, a <strong>Text label</strong> for the location name, a <strong>Rating component</strong> for the star display (converting a numeric score to visual stars), an <strong>Action button</strong> for 'Get Directions', a <strong>Repeating group</strong> for the scrollable photo gallery, and <strong>Text with formula</strong> for the computed distance based on user's current GPS position."
+  },
+  {
+    "id": 7,
     "appName": "E-commerce Product Card",
     "difficulty": "Advanced",
     "description": "Break down a product listing card from an online store",
@@ -124,5 +174,33 @@
       "Dropdown menu"
     ],
     "explanation": "An e-commerce product card uses an <strong>Image component</strong> for the product photo, a <strong>Text label</strong> for the product name, <strong>Text with formula</strong> for both the price (formatted with currency symbol, possibly computed with discounts) and reviews count, a <strong>Rating component</strong> for the star display (a specialized component that converts a numeric score to visual stars), and an <strong>Action button</strong> for 'Add to Cart' (a button with text, distinct from an icon-only button)."
+  },
+  {
+    "id": 8,
+    "appName": "Project Dashboard (Trello / Jira)",
+    "difficulty": "Advanced",
+    "description": "Identify the components that make up a project management board",
+    "zones": [
+      { "id": "zone-1", "label": "Board Title", "correctComponent": "Text label" },
+      { "id": "zone-2", "label": "Column (To Do / In Progress / Done)", "correctComponent": "Repeating group" },
+      { "id": "zone-3", "label": "Task Card", "correctComponent": "Repeating group" },
+      { "id": "zone-4", "label": "Assignee Avatar", "correctComponent": "Image component" },
+      { "id": "zone-5", "label": "Priority Tag", "correctComponent": "Badge" },
+      { "id": "zone-6", "label": "Add Task Button", "correctComponent": "Action button" },
+      { "id": "zone-7", "label": "Due Date", "correctComponent": "Text with formula" }
+    ],
+    "availableComponents": [
+      "Text label",
+      "Repeating group",
+      "Image component",
+      "Badge",
+      "Action button",
+      "Text with formula",
+      "Input field",
+      "Icon button",
+      "Dropdown menu",
+      "Toggle switch"
+    ],
+    "explanation": "A project dashboard uses a <strong>Text label</strong> for the board title, <strong>Repeating groups</strong> for both the columns (each status column repeats the same layout) and the task cards within them (nested repeating groups), <strong>Image components</strong> for assignee avatars, a <strong>Badge</strong> for the priority tag (a color-coded label indicating urgency), an <strong>Action button</strong> for 'Add Task', and <strong>Text with formula</strong> for the due date (computed to show 'Due in 3 days' or 'Overdue')."
   }
 ]
